@@ -5,7 +5,12 @@ class Login extends React.Component {
     render(){
         return(
             <div>
-                <p>this is the login page</p>
+            <form className="login-form">
+            <lable for="login">Login</lable>
+            <input type="text" placeholder="Username" value={null}/>
+            <lable for="login">Login</lable>
+            <input type="text" placeholder="Username" value={null}/>
+            </form>
             </div>
         )
     }
