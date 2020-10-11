@@ -1,9 +1,12 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import ReactPlayer from "react-player"
+// import userReducer from "../reducers/index.js"
+// import loadUser from "../actions/index.js"
 class Welcome extends React.Component{
 
     render(){
+
         return(
             <div className="welcome-page grid-column" >
             <p><strong>Welcome To A Stress Free You</strong></p>

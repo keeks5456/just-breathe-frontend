@@ -3,13 +3,21 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-// import {Provider} from 'react-redux'
-// import {createStore} from 'redux'
-// import entry_reducer from './reducers/entry_reducer'
+import {Provider} from 'react-redux'
+import {createStore, applyMiddleware} from 'redux'
+import thunk from 'redux-thunk'
+import fetchUser  from "./actions/index.js"
+import userReducer from "./reducers/index.js"
+
+// notes ypu were working on fetching the user data and trying to console.log() but nthing it showing just yet
+let store = createStore(userReducer, applyMiddleware(thunk))
+
 
 ReactDOM.render(
   <React.StrictMode>
+  <Provider store={store}>
     <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
