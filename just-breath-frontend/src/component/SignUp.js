@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { signup } from '../actions/index.js';
-import { withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 class Signup extends Component {
   // pretty standard
@@ -10,7 +10,11 @@ class Signup extends Component {
     super(props);
     this.state = {
       username: '',
-      password: ''
+      password: '',
+      password_confirmation: '',
+      avatar: '',
+      bio: '',
+      
     };
 
     this.onChange = this.onChange.bind(this);
@@ -29,7 +33,7 @@ class Signup extends Component {
     this.props.signup(this.state).then(
       () => {
         // route to /login once signup is complete
-        this.props.history.push('/login');
+        this.props.history.push('/welcome');
       },
       // if we get back a status code of >= 400 from the server...
       err => {
@@ -57,7 +61,27 @@ class Signup extends Component {
               />
             </div>
             <div className="form-group">
-              <label htmlFor="password">password</label>
+              <label htmlFor="avatar">Avatar</label>
+              <input
+                type="text"
+                id="avatar"
+                name="avatar"
+                value={this.state.avatar}
+                onChange={this.onChange}
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="bio">Bio</label>
+              <input
+                type="text"
+                id="bio"
+                name="bio"
+                value={this.state.bio}
+                onChange={this.onChange}
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="password">Password</label>
               <input
                 type="password"
                 id="password"
@@ -65,11 +89,22 @@ class Signup extends Component {
                 value={this.state.password}
                 onChange={this.onChange}
               />
+              <div className="form-group">
+              <label htmlFor="password_confirmation">password_confirmation</label>
+              <input
+                type="password"
+                id="password_confirmation"
+                name="password_confirmation"
+                value={this.state.password_confirmation}
+                onChange={this.onChange}
+              />
+            </div>
             </div>
             <div className="form-group">
               <button className="btn btn-primary btn-lg">Sign up</button>
             </div>
           </form>
+          <p>Well hello there! Already have an account!? Please login <Link to="/login">here :)</Link></p>
         </div>
       </div>
     );

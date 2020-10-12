@@ -17,3 +17,5 @@ export default (state = DEFAULT_STATE, action) => {
       return state;
   }
 }
+
+console.log(DEFAULT_STATE.isAuthenticated)

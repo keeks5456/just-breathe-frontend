@@ -3,7 +3,13 @@ import jwtDecode from 'jwt-decode';
 
 export const SET_CURRENT_USER = 'SET_CURRENT_USER';
 
-const BASE_URL = 'http://localhost:3001'
+const BASE_URL = 'http://localhost:3000/api/v1'
+
+// const headers = {
+//     "Content-Type": "application/json",
+//     Accept: "application/json",
+//     Authorization: `Bearers ${localStorage.token}`,
+//   };
 
 export function setAuthorizationToken(token) {
   if (token) {
@@ -14,8 +20,9 @@ export function setAuthorizationToken(token) {
 }
 
 export function signup(userData) {
+    console.log(userData)
   return dispatch => {
-    return axios.post(`${BASE_URL}/api/users`, userData);
+    return axios.post(`${BASE_URL}/users`, userData);
   }
 }
 
@@ -28,9 +35,11 @@ export function logout() {
 }
 
 export function login(data) {
+    // console.log(data)
   return dispatch => {
-    return axios.post(`${BASE_URL}/api/users/auth`, data).then(res => {
-      const token = res.data;
+    return axios.post(`${BASE_URL}/login`, data).then(res => {
+      const token = res.data.jwt;
+      console.log(res)
       localStorage.setItem('jwtToken', token);
       setAuthorizationToken(token);
       dispatch(setCurrentUser(jwtDecode(token)));
@@ -38,7 +47,9 @@ export function login(data) {
   }
 }
 
+
 export function setCurrentUser(user) {
+
   return {
     type: SET_CURRENT_USER,
     user
