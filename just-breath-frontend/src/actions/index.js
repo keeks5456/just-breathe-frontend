@@ -1,42 +1,46 @@
-import axios from 'axios'
+import axios from 'axios';
+import jwtDecode from 'jwt-decode';
 
-const URL = 'http://localhost:3000/api/v1/users'
+export const SET_CURRENT_USER = 'SET_CURRENT_USER';
 
-const fetchUsersRequest = () =>{
-    return {
-        type: 'FETCH_USERS_REQUEST'
-    }
+const BASE_URL = 'http://localhost:3001'
+
+export function setAuthorizationToken(token) {
+  if (token) {
+    axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+  } else {
+    delete axios.defaults.headers.common['Authorization'];
+  }
 }
 
-const fetchUsersSuccess = users =>{
-    return {
-        type: 'FETCH_USERS_SUCCESS',
-        payload: users
-    }
+export function signup(userData) {
+  return dispatch => {
+    return axios.post(`${BASE_URL}/api/users`, userData);
+  }
 }
 
-const fetchUsersFailures = error =>{
-    return {
-        type: 'FETCH_USERS_FAILURE',
-        payload: error
-    }
+export function logout() {
+  return dispatch => {
+    localStorage.removeItem('jwtToken');
+    setAuthorizationToken(false);
+    dispatch(setCurrentUser({}));
+  }
 }
 
-export const fetchUser = () =>{
-    return function(dispatch){
-        dispatch(fetchUsersRequest())
-       axios.get(URL)
-       .then(res => {
-           const user = res.data
-           console.log(user)
-           dispatch(fetchUsersSuccess(user))
-           //response.data is the arrayy of users 
-       }) 
-       .catch(error => {
-           dispatch(fetchUsersFailures(error.message))
-           //error.message gives description of error
-       })
-    }
+export function login(data) {
+  return dispatch => {
+    return axios.post(`${BASE_URL}/api/users/auth`, data).then(res => {
+      const token = res.data;
+      localStorage.setItem('jwtToken', token);
+      setAuthorizationToken(token);
+      dispatch(setCurrentUser(jwtDecode(token)));
+    });
+  }
 }
 
-export default {fetchUsersRequest, fetchUser}
+export function setCurrentUser(user) {
+  return {
+    type: SET_CURRENT_USER,
+    user
+  };
+}

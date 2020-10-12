@@ -34,3 +34,11 @@ class Welcome extends React.Component{
 // there will be Links on each button that links to either login page or sign up page
 // have the buttons rest on top of each other vertically
 export default Welcome;
+
+// <Route
+// exact
+// path="/login"
+// render={(routerProps) => {
+//   return <Login {...routerProps}  />;
+// }}
+// />

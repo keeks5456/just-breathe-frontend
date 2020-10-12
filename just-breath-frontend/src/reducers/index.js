@@ -1,33 +1,19 @@
-const initialState = {
-    user: [],
-    errors: '',
-    loading: false
-}
-export const userReducer = (state = initialState, action) =>{
-    switch(action.type){
-        case "FETCH_USERS_REQUEST":
-        return {
-            ...state,
-            loading: true
-        }
+import { SET_CURRENT_USER } from '../actions/index.js';
 
-        case "FETCH_USERS_SUCCESS":
-            return {
-                ...state,
-                loading: false,
-                users: action.payload,
-                error:''
-            }
-            case "FETCH_USERS_FAILURE":
-                return{
-                    ...state,
-                    loading: false,
-                    users: [],
-                    error: action.payload
-                }
-                default:
-                    return state
-    }
-}
+const DEFAULT_STATE = {
+  isAuthenticated: false,
+  user: {}
+};
 
-export default userReducer
+export default (state = DEFAULT_STATE, action) => {
+  switch(action.type) {
+    case SET_CURRENT_USER:
+      return {
+        // turn an empty object into false or an object with keys to be true
+        isAuthenticated: !!(Object.keys(action.user).length),
+        user: action.user
+      };
+    default:
+      return state;
+  }
+}
