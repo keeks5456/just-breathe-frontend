@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { login } from '../actions/index.js';
-import { Link, withRouter, useHistory } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
-
+import '../App.css';
 
 class LoginForm extends Component {
   constructor(props) {
@@ -11,7 +11,8 @@ class LoginForm extends Component {
     this.state = {
       username: '',
       password: '',
-      user:{}
+      user:{},
+      errorMessage: ''
     };
 
     this.onSubmit = this.onSubmit.bind(this);
@@ -19,50 +20,28 @@ class LoginForm extends Component {
     
   }
 
-
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value });
   }
 
-  
   onSubmit(e) {
     e.preventDefault();
-  
       this.props.login(this.state)
-      .then((res) =>  
-      this.props.history.push('/welcome'),
-      (err) => {
-        debugger
+      .then((res) => {
+      // console.log(res)
+      this.props.history.push('/welcome')},
+      (err) => { 
+        this.setState({errorMessage: err.message = 'Username or Password are Incorrect'})
+        // debugger
       });
 }
-        //   if(res.error){
-        //       this.setState({ error: true }, alert(res.error))
-
-        //       }else {
-        //           this.handleLogin(res)
-        //           this.props.history.push("/welcome");
-        //       }
-            // }
-    //   )
-    // }
-            
-
-  handleLogin = (res) => {
-    console.log(res);
-    debugger
-    const currentUser = { currentUser: res.data.user };
-    localStorage.setItem("token", res.data.jwt);
-    this.setState({
-      user: currentUser,
-    });
-    this.props.history.push('/welcome')
-  };
 
   render() {
     const { username, password } = this.state;
     return (
       <div className="row">
         <div className="col-md-4 col-md-offset-4">
+        {this.state.errorMessage && <h3 className="error"> { this.state.errorMessage } </h3>}
       <form onSubmit={this.onSubmit}>
         <h1>Login</h1>
         <div className="form-group">
@@ -73,11 +52,11 @@ class LoginForm extends Component {
             <label htmlFor="password">password</label>
             <input type="password" id="password" name="password" value={password} onChange={this.onChange}/>
           </div>
+        
         <button type="submit" className="btn btn-primary">Login</button>
       </form>
       <div>
       <p>Hello there! Please sign up <Link to="/signUp">here</Link> if this is your first time!</p>
-
       </div>
       </div>
       </div>

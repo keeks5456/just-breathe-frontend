@@ -11,6 +11,7 @@ class Welcome extends React.Component{
             <div className="welcome-page grid-column" >
             <p><strong>Welcome To A Stress Free You</strong></p>
             <img src="{null}" alt="This is a relaxing sunset "/>
+            <br/>
             {/*<ReactPlayer
             className="react-player"
             url="https://www.youtube.com/watch?v=ug50zmP9I7s"
@@ -19,12 +20,10 @@ class Welcome extends React.Component{
             />*/} 
             {/*inser this meditation video in the intro journal entry page */}
             
-          <Link to="/login">
-          <button className="login"> Login </button>
+          <Link to="/intro_journal">
+          <button className="intro_journal_button"> Intro_journal </button>
           </Link>
-          <Link to="/signup"> 
-          <button className="signup"> Sign Up</button>
-          </Link>
+       
           </div>
         )
     }

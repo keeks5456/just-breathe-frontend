@@ -8,25 +8,20 @@ import NotFound from './component/NotFound'
 import requireAuth from './require_auth/require_auth'
 import UserProfile from "./component/UserProfile";
 import './App.css';
+import IntroJournal from './component/IntroJournal';
 
 class App extends React.Component {
   render() {
-    console.log()
     return(
         <Router>
           <div>
             <Switch>
-            <Route
-            exact
-            path="/login"
-            render={(routerProps) => {
-              return <Login {...routerProps} handleLogin={this.handleLogin} />;
-            }}
-          />
+            
             <Route exact path='/welcome' component={requireAuth(Welcome)} /> 
+            <Route exact path='/intro_journal' component={IntroJournal}/>
             <Route exact path='/login' component={Login} />
-              <Route exact path='/signup' component={SignUp} />
-              <Route exact path="*" component={NotFound} />
+            <Route exact path='/signup' component={SignUp} />
+            <Route exact path="*" component={NotFound} />
             </Switch>
           </div>
         </Router>)
