@@ -1,6 +1,7 @@
 import axios from 'axios';
 import jwtDecode from 'jwt-decode';
 
+
 export const SET_CURRENT_USER = 'SET_CURRENT_USER';
 
 const BASE_URL = 'http://localhost:3000/api/v1'
@@ -19,14 +20,14 @@ export function setAuthorizationToken(token) {
   }
 }
 
-export function signup(userData) {
+export function signup(userData) { //this handles a user signup
     console.log(userData)
   return dispatch => {
     return axios.post(`${BASE_URL}/users`, userData);
   }
 }
 
-export function logout() {
+export function logout() { //this handles a user logout
   return dispatch => {
     localStorage.removeItem('jwtToken');
     setAuthorizationToken(false);
@@ -34,7 +35,7 @@ export function logout() {
   }
 }
 
-export function login(data) {
+export function login(data) { //this handles a user login
     // console.log(data)
   return dispatch => {
     return axios.post(`${BASE_URL}/login`, data).then(res => {
@@ -46,6 +47,7 @@ export function login(data) {
     });
   }
 }
+
 
 
 export function setCurrentUser(user) {

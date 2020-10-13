@@ -8,7 +8,7 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import rootReducer from './reducers';
 import jwtDecode from 'jwt-decode';
 import { setCurrentUser,setAuthorizationToken } from './actions';
-
+import './App.css';
 const store = createStore(
   rootReducer,
   compose(
