@@ -1,16 +1,14 @@
-import Axios from 'axios';
+import axios from 'axios';
 import React from 'react';
+import { entryFormSubmit } from '../actions/user_actions.js';
+
 import { connect } from 'react-redux';
 
 class IntroJournal extends React.Component{
     state = {
-        content: ""
+        content: [],
+        errorMessage: ''
     }
-
-    // componentDidMount(){
-    //     Axios.get("http://localhost:3000/api/v1/journal_entries")
-    //     .then(res => console.log(res))
-    // }
 
     onChange = (e) =>{
         console.log(e.target.value)
@@ -20,11 +18,19 @@ class IntroJournal extends React.Component{
     }
 
     handleSubmit = (e) =>{
-        console.log(e)
-        const content = this.state.content
         e.preventDefault()
-
-    }
+        console.log(e)
+        this.props.entryFormSubmit(this.state)
+        .then((res) =>{
+            console.log('hi')
+       
+        .then((err) => {
+                this.setState({errorMessage: err.message = 'what the heck'})
+                // debugger 
+            })
+        })
+       
+    } //end
     
 
 
@@ -55,9 +61,25 @@ class IntroJournal extends React.Component{
                 <br/> 
                 <button className="submit-button">Submit</button>
                 </form>
+                {this.state.content}
             </div>
         )
     }
 }
 
-export default IntroJournal
+const mapStateToProps = (state) =>{
+    console.log(state)
+    return {
+        content: state.content
+    }
+}
+
+const mapDispatchToProps = (dispatch) =>{
+    return {
+        addContent: content => {
+            dispatch(entryFormSubmit(content))
+        }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps) (IntroJournal)
