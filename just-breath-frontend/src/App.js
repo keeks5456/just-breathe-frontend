@@ -3,7 +3,8 @@ import SignUp from "./component/SignUp";
 import Login from "./component/Login";
 import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
 import Welcome from "./container/Welcome";
-import Navbar from './component/Navbar'
+import NavigationBar from './component/Navbar'
+import Header from './component/Header'
 import NotFound from './component/NotFound'
 import requireAuth from './require_auth/require_auth'
 import UserProfile from "./component/UserProfile";
@@ -16,8 +17,9 @@ class App extends React.Component {
         <Router>
           <div>
             <Switch>
-            
-            <Route exact path='/welcome' component={requireAuth(Welcome)} /> 
+          
+           {/* <Route exact path='/welcome' component={requireAuth(Welcome)} /> */}
+           <Route exact path='/welcome' component={Welcome} />
             <Route exact path='/intro_journal' component={IntroJournal}/>
             <Route exact path='/login' component={Login} />
             <Route exact path='/signup' component={SignUp} />

@@ -9,6 +9,8 @@ import rootReducer from './reducers';
 import jwtDecode from 'jwt-decode';
 import { setCurrentUser,setAuthorizationToken } from './actions';
 import './App.css';
+
+
 const store = createStore(
   rootReducer,
   compose(
@@ -16,6 +18,8 @@ const store = createStore(
     window.devToolsExtension ? window.devToolsExtension() : f => f
   )
 );
+
+
 
 if (localStorage.jwtToken) {
   setAuthorizationToken(localStorage.jwtToken);

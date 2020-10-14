@@ -8,6 +8,7 @@ class Welcome extends React.Component{
     render(){
 
         return(
+            
             <div className="welcome-page grid-column" >
             <p><strong>Welcome To A Stress Free You</strong></p>
             <img src="{null}" alt="This is a relaxing sunset "/>

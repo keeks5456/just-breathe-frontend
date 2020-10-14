@@ -27,7 +27,7 @@ class NavigationBar extends React.Component {
         <nav className="navbar navbar-default">
           <div className="container-fluid">
             <div className="navbar-header">
-              <Link to="/" className="navbar-brand">Auth App</Link>
+              <Link to="/login" className="navbar-brand">Auth App</Link>
             </div>
             <div className="collapse navbar-collapse">
               {this.props.auth ? userLinks : guestLinks}

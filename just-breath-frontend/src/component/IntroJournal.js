@@ -1,13 +1,12 @@
 import axios from 'axios';
 import React from 'react';
 import { entryFormSubmit } from '../actions/user_actions.js';
-
+import { authReducer } from '../reducers/index'
 import { connect } from 'react-redux';
 
 class IntroJournal extends React.Component{
     state = {
-        content: [],
-        errorMessage: ''
+        content: []
     }
 
     onChange = (e) =>{
@@ -18,18 +17,17 @@ class IntroJournal extends React.Component{
     }
 
     handleSubmit = (e) =>{
+
+        console.log(this.props)
         e.preventDefault()
-        console.log(e)
-        this.props.entryFormSubmit(this.state)
-        .then((res) =>{
-            console.log('hi')
-       
-        .then((err) => {
-                this.setState({errorMessage: err.message = 'what the heck'})
-                // debugger 
-            })
-        })
-       
+        let user_id = this.props.user
+        // let userContent = this.props.entryFormSubmit(this.state.content, user_id)
+        // .then((res) =>{
+            console.log(this.state)
+            console.log(this.props)
+            // console.log(res)
+   
+        // })
     } //end
     
 
@@ -68,18 +66,17 @@ class IntroJournal extends React.Component{
 }
 
 const mapStateToProps = (state) =>{
-    console.log(state)
+    
     return {
+        user: state.user,
+        authReducer: state.user,
         content: state.content
     }
 }
 
-const mapDispatchToProps = (dispatch) =>{
-    return {
-        addContent: content => {
+const mapDispatchToProps = (dispatch) =>({
+        entryFormSubmit: content => 
             dispatch(entryFormSubmit(content))
-        }
-    }
-}
+})
 
 export default connect(mapStateToProps, mapDispatchToProps) (IntroJournal)

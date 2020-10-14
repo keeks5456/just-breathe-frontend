@@ -1,17 +1,17 @@
+import { NEW_POST } from '../actions/types.js'
+
 
 const initialState = {
    contents: [],
-}
+};
 
-export default (state = initialState, action) => {
-    switch(action.type) {
-      case SET_CURRENT_USER:
-        return {
-          // turn an empty object into false or an object with keys to be true
-          isAuthenticated: !!(Object.keys(action.user).length),
-          user: action.user
-        };
-      default:
-        return state;
+ export const usersReducer = (state = initialState, action) => { switch(action.type){
+        case NEW_POST:
+            return{
+                ...state,
+                contents: action
+            }
+        default:
+            return state
     }
-  }
+}

@@ -12,7 +12,7 @@ export default function(ComponentToBeRendered) {
     }
 
     componentWillUpdate(nextProps) {
-        debugger
+        // debugger
       if (!nextProps.isAuthenticated) {
         this.props.history.push('/login');
       }
