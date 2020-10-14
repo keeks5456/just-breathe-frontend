@@ -45,15 +45,16 @@ class LoginForm extends Component {
         <div className="col-md-4 col-md-offset-4">
         {this.state.errorMessage && <h3 className="error"> { this.state.errorMessage } </h3>}
       <form className="form" onSubmit={this.onSubmit}>
+
         <h1>Login</h1>
         <div className="form-group">
             <label htmlFor="username">Username: </label>
-            <input type="text" id="username" name="username" value={username} onChange={this.onChange}/>
+            <input type="text" id="username" name="username" value={username} size="25" maxLength="7" onChange={this.onChange}/>
           </div> 
           
           <div className="form-group">
             <label htmlFor="password">Password: </label>
-            <input type="password" id="password" name="password" value={password} onChange={this.onChange}/>
+            <input type="password" id="password" name="password" value={password} size="25" maxLength="7" onChange={this.onChange}/>
           </div>
         
         <button type="submit" className="login-button">Login</button>

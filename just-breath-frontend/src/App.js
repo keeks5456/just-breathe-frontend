@@ -16,6 +16,7 @@ class App extends React.Component {
     return(
         <Router>
           <div>
+          <NavigationBar />
             <Switch>
           
            {/* <Route exact path='/welcome' component={requireAuth(Welcome)} /> */}

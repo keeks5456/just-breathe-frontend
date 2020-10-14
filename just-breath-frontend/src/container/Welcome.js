@@ -11,7 +11,7 @@ class Welcome extends React.Component{
             
             <div className="welcome-page grid-column" >
             <p><strong>Welcome To A Stress Free You</strong></p>
-            <img src="{null}" alt="This is a relaxing sunset "/>
+           {/* <img src="{null}" alt="This is a relaxing sunset "/>*/}
             <br/>
             {/*<ReactPlayer
             className="react-player"
@@ -24,6 +24,8 @@ class Welcome extends React.Component{
           <Link to="/intro_journal">
           <button className="intro_journal_button"> Intro_journal </button>
           </Link>
+
+          
        
           </div>
         )
