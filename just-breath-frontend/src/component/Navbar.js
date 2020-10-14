@@ -15,11 +15,14 @@ class NavigationBar extends React.Component {
         <li><a href="#" onClick={this.logout.bind(this)}>Logout</a></li>
       </ul>
     );
-
     const guestLinks = (
         <ul className="nav navbar-nav navbar-right">
           <li><Link to="/signup">Sign up</Link></li>
           <li><Link to="/login">Login</Link></li>
+          <li><Link to="/welcome">Welcome</Link></li>
+          <li><Link to="/blogs">Blog</Link></li>
+          <li><Link to="/exercises">Exercise</Link></li>
+          <li><Link to="/favorites">Favorite</Link></li>
         </ul>
     );
 

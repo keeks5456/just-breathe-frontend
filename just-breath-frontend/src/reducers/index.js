@@ -1,4 +1,4 @@
-import { SET_CURRENT_USER } from '../actions/index.js';
+import { SET_CURRENT_USER, FIND_CURRENT_USER } from '../actions/index.js';
 import { combineReducers } from "redux";
 
 import { usersReducer } from './users_reducer'

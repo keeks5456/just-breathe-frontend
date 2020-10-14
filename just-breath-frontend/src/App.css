@@ -115,6 +115,11 @@ h1{
 /* nav bar */
 .container-fluid {
   background-color: whitesmoke;
-  padding: 10px;
+  position: relative;
+
+  width: 100%;
+  overflow: hidden;
   border-radius: 10px;
+  overflow: hidden;
+  margin: 20px 20px;
 }

@@ -28,7 +28,6 @@ class LoginForm extends Component {
     e.preventDefault();
       this.props.login(this.state)
       .then((res) => {
-      // console.log(res)
       this.props.history.push('/welcome')},
       (err) => { 
         this.setState({errorMessage: err.message = 'Username or Password are Incorrect'})
@@ -43,9 +42,8 @@ class LoginForm extends Component {
       
       <header className="header"> </header>
         <div className="col-md-4 col-md-offset-4">
+        <form className="form" onSubmit={this.onSubmit}>
         {this.state.errorMessage && <h3 className="error"> { this.state.errorMessage } </h3>}
-      <form className="form" onSubmit={this.onSubmit}>
-
         <h1>Login</h1>
         <div className="form-group">
             <label htmlFor="username">Username: </label>

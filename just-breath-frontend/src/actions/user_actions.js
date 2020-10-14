@@ -13,14 +13,13 @@ export function entryFormSubmit(content){
       return axios.post(`${BASE_URL}/journal_entries`, {
           content: content,
     })
-    // .then(res => res.json())
+    .then(res => res.json())
     .then((content) => {
-        // console.log(content)
         dispatch({
             type: 'NEW_POST',
             payload: content
         })     
     })
-    // axios.post request for submitting and entry form for intro page and profile page
+
   }
 }
