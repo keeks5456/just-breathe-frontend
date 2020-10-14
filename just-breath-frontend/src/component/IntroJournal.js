@@ -1,16 +1,13 @@
-import Axios from 'axios';
+import axios from 'axios';
 import React from 'react';
+import { entryFormSubmit } from '../actions/user_actions.js';
+import { authReducer } from '../reducers/index'
 import { connect } from 'react-redux';
 
 class IntroJournal extends React.Component{
     state = {
-        content: ""
+        content: []
     }
-
-    // componentDidMount(){
-    //     Axios.get("http://localhost:3000/api/v1/journal_entries")
-    //     .then(res => console.log(res))
-    // }
 
     onChange = (e) =>{
         console.log(e.target.value)
@@ -20,11 +17,18 @@ class IntroJournal extends React.Component{
     }
 
     handleSubmit = (e) =>{
-        console.log(e)
-        const content = this.state.content
-        e.preventDefault()
 
-    }
+        console.log(this.props)
+        e.preventDefault()
+        let user_id = this.props.user
+        // let userContent = this.props.entryFormSubmit(this.state.content, user_id)
+        // .then((res) =>{
+            console.log(this.state)
+            console.log(this.props)
+            // console.log(res)
+   
+        // })
+    } //end
     
 
 
@@ -55,9 +59,24 @@ class IntroJournal extends React.Component{
                 <br/> 
                 <button className="submit-button">Submit</button>
                 </form>
+                {this.state.content}
             </div>
         )
     }
 }
 
-export default IntroJournal
+const mapStateToProps = (state) =>{
+    
+    return {
+        user: state.user,
+        authReducer: state.user,
+        content: state.content
+    }
+}
+
+const mapDispatchToProps = (dispatch) =>({
+        entryFormSubmit: content => 
+            dispatch(entryFormSubmit(content))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps) (IntroJournal)

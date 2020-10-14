@@ -32,7 +32,7 @@ class LoginForm extends Component {
       this.props.history.push('/welcome')},
       (err) => { 
         this.setState({errorMessage: err.message = 'Username or Password are Incorrect'})
-        // debugger
+        debugger
       });
 }
 
@@ -40,23 +40,28 @@ class LoginForm extends Component {
     const { username, password } = this.state;
     return (
       <div className="row">
+
+      <header className="header"> </header>
         <div className="col-md-4 col-md-offset-4">
         {this.state.errorMessage && <h3 className="error"> { this.state.errorMessage } </h3>}
-      <form onSubmit={this.onSubmit}>
+      <form className="form" onSubmit={this.onSubmit}>
         <h1>Login</h1>
         <div className="form-group">
-            <label htmlFor="username">Username</label>
+            <label htmlFor="username">Username: </label>
             <input type="text" id="username" name="username" value={username} onChange={this.onChange}/>
-          </div>
+          </div> 
+          
           <div className="form-group">
-            <label htmlFor="password">password</label>
+            <label htmlFor="password">Password: </label>
             <input type="password" id="password" name="password" value={password} onChange={this.onChange}/>
           </div>
         
-        <button type="submit" className="btn btn-primary">Login</button>
+        <button type="submit" className="login-button">Login</button>
+
+        <p>Hello there! Please sign up <Link to="/signUp">here</Link> if this is your first time!</p>
       </form>
       <div>
-      <p>Hello there! Please sign up <Link to="/signUp">here</Link> if this is your first time!</p>
+      
       </div>
       </div>
       </div>

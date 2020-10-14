@@ -6,11 +6,7 @@ export const SET_CURRENT_USER = 'SET_CURRENT_USER';
 
 const BASE_URL = 'http://localhost:3000/api/v1'
 
-// const headers = {
-//     "Content-Type": "application/json",
-//     Accept: "application/json",
-//     Authorization: `Bearers ${localStorage.token}`,
-//   };
+
 
 export function setAuthorizationToken(token) {
   if (token) {
@@ -23,7 +19,9 @@ export function setAuthorizationToken(token) {
 export function signup(userData) { //this handles a user signup
     console.log(userData)
   return dispatch => {
-    return axios.post(`${BASE_URL}/users`, userData);
+    return axios.post(`${BASE_URL}/users`, 
+    {user: userData}
+    );
   }
 }
 
@@ -41,17 +39,19 @@ export function login(data) { //this handles a user login
     return axios.post(`${BASE_URL}/login`, data).then(res => {
       const token = res.data.jwt;
       console.log(res)
+      // debugger
       localStorage.setItem('jwtToken', token);
       setAuthorizationToken(token);
-      dispatch(setCurrentUser(jwtDecode(token)));
+      dispatch(setCurrentUser(res.data.user));
+      console.log(res.data.user)
+      console.log(res.data)
+      debugger
     });
   }
 }
 
 
-
 export function setCurrentUser(user) {
-
   return {
     type: SET_CURRENT_USER,
     user

@@ -31,7 +31,7 @@ class Signup extends Component {
     e.preventDefault();
     // make sure we use an arrow function here to correctly bind this to this.props.history.push
     this.props.signup(this.state).then(
-      () => {
+      (res) => {
         // route to /login once signup is complete
         this.props.history.push('/welcome');
       },
