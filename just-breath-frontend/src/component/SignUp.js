@@ -48,10 +48,10 @@ class Signup extends Component {
     return (
       <div className="row">
         <div className="col-md-4 col-md-offset-4">
-          <form onSubmit={this.onSubmit}>
+          <form className="form-signup" onSubmit={this.onSubmit}>
             <h1>Sign up!</h1>
             <div className="form-group">
-              <label htmlFor="username">Username</label>
+              <label htmlFor="username">Username: </label>
               <input
                 type="text"
                 id="username"
@@ -61,7 +61,7 @@ class Signup extends Component {
               />
             </div>
             <div className="form-group">
-              <label htmlFor="avatar">Avatar</label>
+              <label htmlFor="avatar">Avatar: </label>
               <input
                 type="text"
                 id="avatar"
@@ -71,7 +71,7 @@ class Signup extends Component {
               />
             </div>
             <div className="form-group">
-              <label htmlFor="bio">Bio</label>
+              <label htmlFor="bio">Bio: </label>
               <input
                 type="text"
                 id="bio"
@@ -81,7 +81,7 @@ class Signup extends Component {
               />
             </div>
             <div className="form-group">
-              <label htmlFor="password">Password</label>
+              <label htmlFor="password">Password: </label>
               <input
                 type="password"
                 id="password"
@@ -90,7 +90,7 @@ class Signup extends Component {
                 onChange={this.onChange}
               />
               <div className="form-group">
-              <label htmlFor="password_confirmation">password_confirmation</label>
+              <label htmlFor="password_confirmation">password_confirmation: </label>
               <input
                 type="password"
                 id="password_confirmation"
@@ -103,8 +103,9 @@ class Signup extends Component {
             <div className="form-group">
               <button className="btn btn-primary btn-lg">Sign up</button>
             </div>
+            <p>Well hello there! Already have an account!? Please login <Link to="/login">here :)</Link></p>
           </form>
-          <p>Well hello there! Already have an account!? Please login <Link to="/login">here :)</Link></p>
+          
         </div>
       </div>
     );
