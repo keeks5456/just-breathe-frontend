@@ -20,6 +20,7 @@ import { setCurrentUser } from './actions';
 class App extends React.Component {
 
   
+  
 
   render() {
    
@@ -29,8 +30,8 @@ class App extends React.Component {
           <NavigationBar />
             <Switch>
           
-    {<Route exact path='/welcome' component={requireAuth(Welcome)} /> }
-          {/* <Route exact path='/welcome' component={Welcome} />*/}
+    {/*<Route exact path='/welcome' component={requireAuth(Welcome)} />*/ }
+          { <Route exact path='/welcome' component={Welcome} />}
             <Route exact path='/intro_journal' component={IntroJournal}/>
             <Route exact path='/login' component={Login} />
             <Route exact path='/signup' component={SignUp} />

@@ -41,7 +41,7 @@ export function login(data) { //this handles a user login
       localStorage.setItem('jwtToken', token);
       setAuthorizationToken(token);
       dispatch(setCurrentUser(res.data.user));
-      // console.log(res.data.user)
+
 
 
     });

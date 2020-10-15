@@ -36,11 +36,11 @@ class Signup extends Component {
         this.props.history.push('/welcome');
       },
       // if we get back a status code of >= 400 from the server...
-      err => {
-        // not for production - but good for testing for now!
-        // debugger;
+      (err) => { 
+        this.setState({errorMessage: err.message = 'Username or Password are Incorrect'})
         console.log(err)
       }
+      
     );
   }
 

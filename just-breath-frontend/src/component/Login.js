@@ -31,7 +31,7 @@ class LoginForm extends Component {
       this.props.history.push('/welcome')},
       (err) => { 
         this.setState({errorMessage: err.message = 'Username or Password are Incorrect'})
-        debugger
+
       });
 }
 

@@ -20,6 +20,14 @@ export const authReducer = (state = DEFAULT_STATE, action) => {
 
         user: action.user
       };
+      
+      case FIND_CURRENT_USER:
+        console.log(action.user)
+        return{
+          isAuthenticated: true,
+
+          user: action.user
+        }
     default:
       return state;
   }
