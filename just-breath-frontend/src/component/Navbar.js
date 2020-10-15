@@ -12,11 +12,12 @@ class NavigationBar extends React.Component {
   render() {
     const userLinks = (
       <ul className="nav navbar-nav navbar-right">
-        <li><a href="#" onClick={this.logout.bind(this)}>Logout</a></li>
         <li><Link to="/welcome">Welcome</Link></li>
+        <li><Link to="/profile">Profile</Link></li>
         <li><Link to="/blogs">Blog</Link></li>
         <li><Link to="/exercises">Exercise</Link></li>
         <li><Link to="/favorites">Favorite</Link></li>
+        <li><a href="#" onClick={this.logout.bind(this)}>Logout</a></li>
       </ul>
     );
     const guestLinks = (
@@ -33,7 +34,7 @@ class NavigationBar extends React.Component {
             <div className="navbar-header">
             </div>
             <div className="collapse navbar-collapse">
-              {localStorage.jwtToken ? userLinks : guestLinks}
+              {!!localStorage.jwtToken ? userLinks : guestLinks}
             </div>
           </div>
         </nav>

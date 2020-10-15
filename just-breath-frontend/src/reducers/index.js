@@ -14,18 +14,14 @@ export const authReducer = (state = DEFAULT_STATE, action) => {
       // debugger
       console.log(action.user)
       return {
-
         // turn an empty object into false or an object with keys to be true
         isAuthenticated: !!(Object.keys(action.user).length),
-
         user: action.user
       };
-      
       case FIND_CURRENT_USER:
         console.log(action.user)
         return{
           isAuthenticated: true,
-
           user: action.user
         }
     default:
@@ -42,4 +38,3 @@ export default combineReducers({
   authReducer
  });
 
- //write all your reducers in reducer/index.js 

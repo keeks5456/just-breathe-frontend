@@ -10,9 +10,13 @@ class Welcome extends React.Component{
         return(
             
             <div className="welcome-page grid-column" >
-            <p><strong>Welcome To A Stress Free You</strong></p>
+            <h1 className="welcome-heading"><strong>Welcome To A Stress Free You</strong></h1>
            {/* <img src="{null}" alt="This is a relaxing sunset "/>*/}
             <br/>
+            <div>
+            <h1 className="motivation">Motivational Quote Here</h1>
+            <button className="motive-shuffler">Shuffle Me!</button>
+            </div>
             {/*<ReactPlayer
             className="react-player"
             url="https://www.youtube.com/watch?v=ug50zmP9I7s"
