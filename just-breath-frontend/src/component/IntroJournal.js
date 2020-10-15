@@ -16,19 +16,19 @@ class IntroJournal extends React.Component{
             [e.target.name]: e.target.value})
     }
 
-    handleSubmit = (e) =>{
+    // handleSubmit = (e) =>{
 
-        console.log(this.props)
-        e.preventDefault()
-        let user_id = this.props.user
-        // let userContent = this.props.entryFormSubmit(this.state.content, user_id)
-        // .then((res) =>{
-            console.log(this.state)
-            console.log(this.props)
-            // console.log(res)
+    //     console.log(this.props)
+    //     e.preventDefault()
+    //     let user_id = this.props.user
+    //     let userContent = this.props.entryFormSubmit(this.state.content, user_id)
+    //     // .then((res) =>{
+    //         console.log(this.state)
+    //         console.log(this.props)
+    //         // console.log(res)
    
-        // })
-    } //end
+    //     // })
+    // } //end
     
 
 

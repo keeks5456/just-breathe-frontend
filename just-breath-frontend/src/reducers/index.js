@@ -1,4 +1,4 @@
-import { SET_CURRENT_USER } from '../actions/index.js';
+import { SET_CURRENT_USER, FIND_CURRENT_USER } from '../actions/index.js';
 import { combineReducers } from "redux";
 
 import { usersReducer } from './users_reducer'
@@ -20,6 +20,14 @@ export const authReducer = (state = DEFAULT_STATE, action) => {
 
         user: action.user
       };
+      
+      case FIND_CURRENT_USER:
+        console.log(action.user)
+        return{
+          isAuthenticated: true,
+
+          user: action.user
+        }
     default:
       return state;
   }

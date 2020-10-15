@@ -13,13 +13,17 @@ class NavigationBar extends React.Component {
     const userLinks = (
       <ul className="nav navbar-nav navbar-right">
         <li><a href="#" onClick={this.logout.bind(this)}>Logout</a></li>
+        <li><Link to="/welcome">Welcome</Link></li>
+        <li><Link to="/blogs">Blog</Link></li>
+        <li><Link to="/exercises">Exercise</Link></li>
+        <li><Link to="/favorites">Favorite</Link></li>
       </ul>
     );
-
     const guestLinks = (
         <ul className="nav navbar-nav navbar-right">
           <li><Link to="/signup">Sign up</Link></li>
           <li><Link to="/login">Login</Link></li>
+
         </ul>
     );
 
@@ -27,10 +31,9 @@ class NavigationBar extends React.Component {
         <nav className="navbar navbar-default">
           <div className="container-fluid">
             <div className="navbar-header">
-              <Link to="/login" className="navbar-brand">Auth App</Link>
             </div>
             <div className="collapse navbar-collapse">
-              {this.props.auth ? userLinks : guestLinks}
+              {localStorage.jwtToken ? userLinks : guestLinks}
             </div>
           </div>
         </nav>

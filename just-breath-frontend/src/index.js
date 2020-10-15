@@ -7,7 +7,8 @@ import thunk from 'redux-thunk';
 import { createStore, applyMiddleware, compose } from 'redux';
 import rootReducer from './reducers';
 import jwtDecode from 'jwt-decode';
-import { setCurrentUser,setAuthorizationToken } from './actions';
+import { setCurrentUser,setAuthorizationToken, findCurrentUser } from './actions';
+
 import './App.css';
 
 
@@ -21,15 +22,20 @@ const store = createStore(
 
 
 
-if (localStorage.jwtToken) {
+  if (localStorage.jwtToken) {
   setAuthorizationToken(localStorage.jwtToken);
   // prevent someone from manually setting a key of 'jwtToken' in localStorage
   try {
-    store.dispatch(setCurrentUser(jwtDecode(localStorage.jwtToken)));
+    // find the current user 
+    // store.dispatch(findCurrentUser(jwtDecode(localStorage.jwtToken)))
+    store.dispatch(findCurrentUser(localStorage.jwtToken))
+    // set the current user
+    // store.dispatch(setCurrentUser(jwtDecode(localStorage.jwtToken)));
+    store.dispatch(setCurrentUser(localStorage.jwtToken));
   } catch(e) {
     store.dispatch(setCurrentUser({}))
   }
-}
+  }
 
 ReactDOM.render(
     <Provider store={store}>
@@ -40,9 +46,7 @@ ReactDOM.render(
 );
   
   
-  // here we will be keeping our store data 
-  // we need to use provider to pass in our store data to the other components
-  // we are importing entry_reducer because thats where ur stored entries willl live
+
   
   // If you want your app to work offline and load faster, you can change
   // unregister() to register() below. Note this comes with some pitfalls.
