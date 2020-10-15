@@ -8,4 +8,6 @@ class UserProfile extends React.Component{
     }
 }
 
+// mapstatetoprops
+
 export default UserProfile

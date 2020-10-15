@@ -1,6 +1,5 @@
 import { NEW_POST } from "../actions/user_actions";
 
-
 const initialState = {
    content: [],
 };
@@ -10,7 +9,7 @@ const initialState = {
         case NEW_POST:
             return{
                 ...state,
-                content: action.payload,
+                content: [...state.content, action.payload],
             }
         default:
             return state

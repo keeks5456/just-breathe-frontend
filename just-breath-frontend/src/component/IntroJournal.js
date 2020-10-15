@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React from 'react';
 import { usersReducer } from '../reducers/users_reducer.js';
+import {createNewEntry} from '../actions/user_actions'
 import { authReducer } from '../reducers/index'
 import { connect } from 'react-redux';
 
@@ -8,7 +9,7 @@ const BASE_URL = 'http://localhost:3000/api/v1'
 
 class IntroJournal extends React.Component{
     state = {
-        content: [],
+        content: " ",
         user:{},
         errorMessage: ''
     }
@@ -23,23 +24,12 @@ class IntroJournal extends React.Component{
     handleSubmit = (e) =>{
         e.preventDefault()
        const newPostData = {
-           content: this.props.data,
-           user: this.props.authReducer
+           content: this.state.content,
+           user_id: this.props.user.id
        }
-       this.props.addNewPost(this.state)
-       fetch(`${BASE_URL}/journal_entries`,{
-           method: `POST`,
-           headers:{
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(newPostData)
-       })
-       .then(res => res.json())
-       .then(json => {
-           console.log(json)
-       })
-    } //end
+       this.props.createNewEntry(newPostData,localStorage.jwtToken)
+       this.props.history.push('/profile')
+    } 
     
 
 
@@ -48,11 +38,12 @@ class IntroJournal extends React.Component{
         const {content} = this.state
         return(
             <div>
-                <h1>Intro Journal</h1>
+                <h1 className="intro-title">Intro Journal</h1>
+                <div className="intro-container">
                 <p>Before you begin your adventures into <b>Just Breath,</b> please take a few minutes to write down anything you wish to express!</p>
 
                 <p>This is a safe space to let out any negative thoughts, emotions, frustrations, and all of the above that have hindered you to feel at peace with yourself! </p>
-
+                </div>
                 <form className="textarea-form" 
                 onSubmit={this.handleSubmit}>
                 <label htmlFor='content'>What's On Your Mind Today!</label>
@@ -79,15 +70,15 @@ class IntroJournal extends React.Component{
 const mapStateToProps = (state) =>{
     console.log(state)
     return {
-        authReducer: state.user,
-        content: state.content
+        user: state.authReducer.user,
     }
 }
+//alternative way
 
-const mapDispatchToProps = dispatch =>{
-    return {
-        addNewPost: (content) => dispatch({ type: 'NEW_POST', payload: content })
-    }
-}
+// const mapDispatchToProps = dispatch =>{
+//     return { 
+//  createNewEntry: () => dispatch(createNewEntry())
+//     }
+// }
 
-export default connect(mapStateToProps, mapDispatchToProps)(IntroJournal)
+export default connect(mapStateToProps, {createNewEntry})(IntroJournal)
