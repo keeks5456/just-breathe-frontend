@@ -1,8 +1,10 @@
 import axios from 'axios';
 import React from 'react';
-import { entryFormSubmit } from '../actions/user_actions.js';
+import { usersReducer } from '../reducers/users_reducer.js';
 import { authReducer } from '../reducers/index'
 import { connect } from 'react-redux';
+
+const BASE_URL = 'http://localhost:3000/api/v1'
 
 class IntroJournal extends React.Component{
     state = {
@@ -19,15 +21,24 @@ class IntroJournal extends React.Component{
     }
 
     handleSubmit = (e) =>{
-
         e.preventDefault()
-        this.props.entryFormSubmit(this.state)
-        .then((res) =>{
-            this.props.history.push('/profile')
+       const newPostData = {
+           content: this.props.data,
+           user: this.props.authReducer
+       }
+       this.props.addNewPost(this.state)
+       fetch(`${BASE_URL}/journal_entries`,{
+           method: `POST`,
+           headers:{
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
         },
-        (err) => {
-            this.setState({errorMessage: err.message = 'Post was not created'})
-        })
+        body: JSON.stringify(newPostData)
+       })
+       .then(res => res.json())
+       .then(json => {
+           console.log(json)
+       })
     } //end
     
 
@@ -73,9 +84,10 @@ const mapStateToProps = (state) =>{
     }
 }
 
-const mapDispatchToProps = (dispatch) =>({
-        entryFormSubmit: content => 
-            dispatch(entryFormSubmit(content))
-})
+const mapDispatchToProps = dispatch =>{
+    return {
+        addNewPost: (content) => dispatch({ type: 'NEW_POST', payload: content })
+    }
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(IntroJournal)
