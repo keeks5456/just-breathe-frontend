@@ -27,9 +27,11 @@ const store = createStore(
   // prevent someone from manually setting a key of 'jwtToken' in localStorage
   try {
     // find the current user 
-    store.dispatch(findCurrentUser(jwtDecode(localStorage.jwtToken)))
+    // store.dispatch(findCurrentUser(jwtDecode(localStorage.jwtToken)))
+    store.dispatch(findCurrentUser(localStorage.jwtToken))
     // set the current user
-    store.dispatch(setCurrentUser(jwtDecode(localStorage.jwtToken)));
+    // store.dispatch(setCurrentUser(jwtDecode(localStorage.jwtToken)));
+    store.dispatch(setCurrentUser(localStorage.jwtToken));
   } catch(e) {
     store.dispatch(setCurrentUser({}))
   }
