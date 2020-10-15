@@ -1,15 +1,17 @@
-import { NEW_POST } from '../actions/types.js'
+import { NEW_POST } from "../actions/user_actions";
 
 
 const initialState = {
-   contents: [],
+   content: [],
+   user: {}
 };
 
- export const usersReducer = (state = initialState, action) => { switch(action.type){
+ export const usersReducer = (state = initialState, action) => { 
+     switch(action.type){
         case NEW_POST:
             return{
                 ...state,
-                contents: action
+                content: action.content
             }
         default:
             return state

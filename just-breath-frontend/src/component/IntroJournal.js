@@ -6,7 +6,9 @@ import { connect } from 'react-redux';
 
 class IntroJournal extends React.Component{
     state = {
-        content: []
+        content: [],
+        user:{},
+        errorMessage: ''
     }
 
     onChange = (e) =>{
@@ -16,19 +18,17 @@ class IntroJournal extends React.Component{
             [e.target.name]: e.target.value})
     }
 
-    // handleSubmit = (e) =>{
+    handleSubmit = (e) =>{
 
-    //     console.log(this.props)
-    //     e.preventDefault()
-    //     let user_id = this.props.user
-    //     let userContent = this.props.entryFormSubmit(this.state.content, user_id)
-    //     // .then((res) =>{
-    //         console.log(this.state)
-    //         console.log(this.props)
-    //         // console.log(res)
-   
-    //     // })
-    // } //end
+        e.preventDefault()
+        this.props.entryFormSubmit(this.state)
+        .then((res) =>{
+            this.props.history.push('/profile')
+        },
+        (err) => {
+            this.setState({errorMessage: err.message = 'Post was not created'})
+        })
+    } //end
     
 
 
@@ -66,9 +66,8 @@ class IntroJournal extends React.Component{
 }
 
 const mapStateToProps = (state) =>{
-    
+    console.log(state)
     return {
-        user: state.user,
         authReducer: state.user,
         content: state.content
     }
@@ -79,4 +78,4 @@ const mapDispatchToProps = (dispatch) =>({
             dispatch(entryFormSubmit(content))
 })
 
-export default connect(mapStateToProps, mapDispatchToProps) (IntroJournal)
+export default connect(mapStateToProps, mapDispatchToProps)(IntroJournal)
