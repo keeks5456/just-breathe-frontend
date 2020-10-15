@@ -34,7 +34,6 @@ class LoginForm extends Component {
 
       });
 }
-
   render() {
     const { username, password } = this.state;
     return (
@@ -60,7 +59,6 @@ class LoginForm extends Component {
         <p>Hello there! Please sign up <Link to="/signUp">here</Link> if this is your first time!</p>
       </form>
       <div>
-      
       </div>
       </div>
       </div>

@@ -7,7 +7,6 @@ export const FIND_CURRENT_USER = 'FIND_CURRENT_USER';
 const BASE_URL = 'http://localhost:3000/api/v1'
 
 
-
 export function setAuthorizationToken(token) {
   if (token) {
     axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
@@ -17,7 +16,6 @@ export function setAuthorizationToken(token) {
 }
 
 export function signup(userData) { //this handles a user signup
-
   return dispatch => {
     return axios.post(`${BASE_URL}/users`, 
     {user: userData}
@@ -41,9 +39,6 @@ export function login(data) { //this handles a user login
       localStorage.setItem('jwtToken', token);
       setAuthorizationToken(token);
       dispatch(setCurrentUser(res.data.user));
-
-
-
     });
   }
 }
