@@ -9,7 +9,7 @@ import UserFavoritesContainer from "./container/UserFavoritesContainer";
 import NavigationBar from './component/Navbar'
 import Header from './component/Header'
 import NotFound from './component/NotFound'
-import UserProfile from "./component/UserProfile";
+import UserProfile from "./container/UserProfile";
 
 import requireAuth from './require_auth/require_auth'
 import './App.css';
