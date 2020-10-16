@@ -50,9 +50,8 @@ export function findCurrentUser(token) {
   }
 }
 
-
 export function setCurrentUser(user) {
-  console.log(user)
+
   return {
     type: SET_CURRENT_USER,
     user: user
