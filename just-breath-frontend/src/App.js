@@ -3,7 +3,7 @@ import SignUp from "./component/SignUp";
 import Login from "./component/Login";
 import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
 import Welcome from "./container/Welcome";
-import BlogsCard from "./component/BlogsCard";
+import BlogsContainer from "./container/BlogsContainer";
 import ExercisesCard from "./component/ExercisesCard";
 import UserFavoritesContainer from "./container/UserFavoritesContainer";
 import NavigationBar from './component/Navbar'
@@ -32,7 +32,7 @@ class App extends React.Component {
             <Route exact path='/intro_journal' component={IntroJournal}/>
             <Route exact path='/login' component={Login} />
             <Route exact path='/signup' component={SignUp} />
-            <Route exact path="blogs" component={BlogsCard} />
+            <Route exact path="blogs" component={BlogsContainer} />
             <Route exact path="exercises" component={ExercisesCard} />
             <Route exact path="favorites" component={UserFavoritesContainer} />
             </Switch>
