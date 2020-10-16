@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React from 'react';
-import { usersReducer } from '../reducers/users_reducer.js';
+// import { usersReducer } from '../reducers/users_reducer.js';
 import {createNewEntry} from '../actions/user_actions'
 import { authReducer } from '../reducers/index'
 import { connect } from 'react-redux';
@@ -16,7 +16,6 @@ class IntroJournal extends React.Component{
 
     onChange = (e) =>{
         console.log(e.target.value)
-
         this.setState({
             [e.target.name]: e.target.value})
     }
@@ -29,6 +28,7 @@ class IntroJournal extends React.Component{
        }
        this.props.createNewEntry(newPostData,localStorage.jwtToken)
        this.props.history.push('/profile')
+       e.target.reset()
     } 
     
 
