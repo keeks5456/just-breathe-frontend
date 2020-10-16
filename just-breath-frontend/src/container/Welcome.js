@@ -10,6 +10,7 @@ class Welcome extends React.Component{
         return(
             
             <div className="welcome-page grid-column" >
+            
             <h1 className="welcome-heading"><strong>Welcome To A Stress Free You</strong></h1>
            {/* <img src="{null}" alt="This is a relaxing sunset "/>*/}
             <br/>
@@ -25,11 +26,12 @@ class Welcome extends React.Component{
             height='500px'
             />*/} 
             {/*inser this meditation video in the intro journal entry page */}
-            
-          <Link to="/intro_journal">
-          <button className="intro_journal_button"> Intro_journal </button>
-          </Link>
 
+            <div>
+            <Link to="/intro_journal">
+            <button className="intro_journal_button"> Intro_journal </button>
+            </Link>
+            </div>
           
        
           </div>
