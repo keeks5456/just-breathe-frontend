@@ -29,7 +29,7 @@ const store = createStore(
     store.dispatch(findCurrentUser(localStorage.jwtToken))
     // set the current user
     // store.dispatch(setCurrentUser(jwtDecode(localStorage.jwtToken)));
-    store.dispatch(setCurrentUser(localStorage.jwtToken));
+    // store.dispatch(setCurrentUser(localStorage.jwtToken)); //was setting the token not whole user
   } catch(e) {
     store.dispatch(setCurrentUser({}))
   }

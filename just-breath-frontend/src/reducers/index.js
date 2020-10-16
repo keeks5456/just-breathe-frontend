@@ -5,7 +5,13 @@ import { usersReducer } from './users_reducer'
 
 const DEFAULT_STATE = {
   isAuthenticated: false,
-  user: {}
+  user: {
+    journal_entries: [],
+    blogs: [],
+    exercises: [],
+    user_favorite_exercises: [],
+    user_favorite_blogs: []
+  }
 };
 
 export const authReducer = (state = DEFAULT_STATE, action) => {

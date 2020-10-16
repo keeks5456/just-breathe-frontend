@@ -11,10 +11,15 @@ class Welcome extends React.Component{
             
             <div className="welcome-page grid-column" >
             
+            <div className="welcome-container">
             <h1 className="welcome-heading"><strong>Welcome To A Stress Free You</strong></h1>
            {/* <img src="{null}" alt="This is a relaxing sunset "/>*/}
-            <br/>
-            <div>
+            <Link to="/intro_journal">
+            <button className="intro_journal_button"> Entry Journal </button>
+            </Link>
+            </div>
+
+            <div className="motivation-container">
             <h1 className="motivation">Motivational Quote Here</h1>
             <button className="motive-shuffler">Shuffle Me!</button>
             </div>
@@ -26,12 +31,6 @@ class Welcome extends React.Component{
             height='500px'
             />*/} 
             {/*inser this meditation video in the intro journal entry page */}
-
-            <div>
-            <Link to="/intro_journal">
-            <button className="intro_journal_button"> Intro_journal </button>
-            </Link>
-            </div>
           
        
           </div>

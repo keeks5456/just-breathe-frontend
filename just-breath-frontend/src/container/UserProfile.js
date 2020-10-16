@@ -30,7 +30,7 @@ class UserProfile extends React.Component{
     render(){
         const {user} = this.props
         const {content} = this.state
-     
+     console.log(user)
     
         return(
             <div className="profile-container">
@@ -63,11 +63,11 @@ class UserProfile extends React.Component{
             </div>
 
             <div className="card-container">
-            {/*user.journal_entries.map(content => 
-                <div className="card">
-                    {content}
+            {user.journal_entries.map(entry =>
+                 <div className="card"> 
+                 {entry.content}
                 </div>
-            )*/}
+            )}
             </div>
             
             </div>

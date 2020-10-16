@@ -46,12 +46,11 @@ export function login(data) { //this handles a user login
 export function findCurrentUser(token) {
   return dispatch =>{
     return axios.post(`${BASE_URL}/currentUser`, token)
-    .then(res => dispatch(setCurrentUser(res.data.user)))
-  }
+    .then(res =>  dispatch(setCurrentUser(res.data.user)))
+  } 
 }
 
 export function setCurrentUser(user) {
-
   return {
     type: SET_CURRENT_USER,
     user: user

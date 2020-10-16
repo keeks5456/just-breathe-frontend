@@ -167,7 +167,7 @@ li a:hover {
 
 .welcome-heading {
   padding-left: 30%;
-  padding-bottom: 10%;
+  padding-bottom: 5%;
   font-family: sans-serif;
   letter-spacing: 5px;
 }
@@ -177,8 +177,8 @@ li a:hover {
   margin-left: 45%;
 }
 
-intro-title {
-  
+.intro_journal_button {
+  margin-left: 45%;
 }
 
 .avatar-container {
@@ -196,3 +196,4 @@ img {
   border-radius: 15px;
   border: 4px solid salmon;
 }
+
