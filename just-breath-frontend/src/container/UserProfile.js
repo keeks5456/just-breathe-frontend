@@ -34,11 +34,11 @@ class UserProfile extends React.Component{
     
         return(
             <div className="profile-container">
-            <div className="avatar-pic">
+            <div className="avatar-container">
             <img src={user.avatar} alt={user.username}/>
             </div>
             <div className="user-bio">
-                <p><i>{user.bio}</i></p>
+                <p className='bio-paragraph'><i>{user.bio}</i></p>
             </div>
             <hr/>
             <div>

@@ -17,6 +17,7 @@ class Welcome extends React.Component{
             <h1 className="motivation">Motivational Quote Here</h1>
             <button className="motive-shuffler">Shuffle Me!</button>
             </div>
+            {/*implement flippy for motivations  */}
             {/*<ReactPlayer
             className="react-player"
             url="https://www.youtube.com/watch?v=ug50zmP9I7s"
