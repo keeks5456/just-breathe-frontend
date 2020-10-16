@@ -38,7 +38,7 @@ class IntroJournal extends React.Component{
         const {content} = this.state
         return(
             <div>
-                <h1 className="intro-title">Intro Journal</h1>
+                <h1 className="intro-title">Entry Journal</h1>
                 <div className="intro-container">
                 <p>Before you begin your adventures into <b>Just Breath,</b> please take a few minutes to write down anything you wish to express!</p>
 
