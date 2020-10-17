@@ -3,7 +3,7 @@ import React from 'react';
 class UserFavoritesContainer extends React.Component{
     render(){
         return(
-            <div></div>
+            <div><p>users UserFavoritesContainer</p></div>
         )
     }
 }

@@ -26,15 +26,14 @@ class App extends React.Component {
           <NavigationBar />
             <Switch>
           
-    {/*<Route exact path='/welcome' component={requireAuth(Welcome)} />*/ }
           { <Route exact path='/welcome' component={Welcome} />}
+            <Route exact path="/blogs" component={BlogsContainer} />
           { <Route exact path='/profile' component={UserProfile} />}
             <Route exact path='/intro_journal' component={IntroJournal}/>
             <Route exact path='/login' component={Login} />
             <Route exact path='/signup' component={SignUp} />
-            <Route exact path="blogs" component={BlogsContainer} />
-            <Route exact path="exercises" component={ExercisesCard} />
-            <Route exact path="favorites" component={UserFavoritesContainer} />
+            <Route exact path="/exercises" component={ExercisesCard} />
+            <Route exact path="/favorites" component={UserFavoritesContainer} />
             </Switch>
           </div>
         </Router>)

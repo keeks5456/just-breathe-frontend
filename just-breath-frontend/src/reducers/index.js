@@ -1,7 +1,10 @@
-import { SET_CURRENT_USER, FIND_CURRENT_USER } from '../actions/index.js';
-import { combineReducers } from "redux";
 
+import { SET_CURRENT_USER, FIND_CURRENT_USER } from '../actions/index.js';
+
+import { combineReducers } from "redux";
 import { usersReducer } from './users_reducer'
+import { blogsReducer } from '../reducers/blogs_reducer.js';
+
 
 const DEFAULT_STATE = {
   isAuthenticated: false,
@@ -38,6 +41,8 @@ console.log(DEFAULT_STATE.isAuthenticated)
 
 export default combineReducers({ 
   usersReducer,
-  authReducer
+  authReducer,
+  blogsReducer
+
  });
 
