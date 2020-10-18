@@ -7,5 +7,5 @@ class ExercisesCard extends React.Component{
         )
     }
 }
-
+// stretch gal feature maybe??
 export default ExercisesCard
