@@ -12,11 +12,7 @@ class BlogsContainer extends React.Component{
         blogs: '',
 
     }
-    // iterate through the blogs to show up all here
-    // have a button to link them to their respective sights 
-    //have the button open to a new window?
-    //blogs need to be in a card format with the image on top, the desciption in the middle then the link to the site at the bottom
-    //blogs needs a star at the top that turns yellow when clicked
+
    componentWillMount(){
        this.props.fetchBlogs()
        console.log('from willMount')
@@ -28,13 +24,18 @@ class BlogsContainer extends React.Component{
         console.log(this.props.blogs)
         const renderBlogs = this.props.blogs.map(blog => (
             <div className="blogs-card" key={blog.id}>
-            {<image src={blog.img_url} alt='blog post'/>}
+            {/*the front of flippy */}
+            <h2>{blog.title}</h2>
+
+            {<img className="blog-image" src={blog.img_url} alt='blog post'/>}
+            {/*the back of flippy */}
             <p>{blog.description}</p>
             <a href="null">Read More</a>
             </div>
         ))
         return(
-            <div>
+            
+            <div className="card-container">
             {renderBlogs} 
             </div>
         )
