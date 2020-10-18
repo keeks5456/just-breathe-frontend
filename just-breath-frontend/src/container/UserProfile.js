@@ -30,7 +30,7 @@ class UserProfile extends React.Component{
     render(){
         const {user} = this.props
         const {content} = this.state
-     console.log(user)
+
     
         return(
             <div className="profile-container">
