@@ -1,19 +1,18 @@
-import {FETCH_POST} from '../actions/user_blog_action'
+import { FETCH_BLOG } from "../actions/user_blog_action";
 
 const initialState = {
-    blogs: []
-}
+  blogs: [],
+};
 
 export const blogsReducer = (state = initialState, action) => {
-    switch(action.type){
-        case FETCH_POST:
-            console.log('reducer')
-            return{
-                ...state,
-               blogs: action.payload,
-            }
-        default: 
-            return state
-    }
-
-}
+  switch (action.type) {
+    case FETCH_BLOG:
+      console.log("reducer");
+      return {
+        ...state,
+        blogs: action.payload,
+      };
+    default:
+      return state;
+  }
+};

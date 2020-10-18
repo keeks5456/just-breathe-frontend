@@ -7,5 +7,5 @@ class BlogsCard extends React.Component{
         )
     }
 }
-
+// stretch gal feature maybe??
 export default BlogsCard

@@ -10,12 +10,9 @@ class Header extends Component {
       <header className="header" >
         <NavagationBar
         />
-      
-        
       </header>
     );
   }
-
 }
 
 export default Header;
