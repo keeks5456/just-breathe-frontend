@@ -3,11 +3,10 @@ import { connect } from 'react-redux';
 import { fetchBlogs } from '../actions/user_blog_action'
 import { blogsReducer } from '../reducers/blogs_reducer.js';
 import { authReducer } from '../reducers/index'
+import Flippy, { FrontSide, BackSide } from 'react-flippy';
 
 
 class BlogsContainer extends React.Component{
-   
-
     state = {
         blogs: '',
 
@@ -22,15 +21,28 @@ class BlogsContainer extends React.Component{
 
     render(){
         console.log(this.props.blogs)
+        
         const renderBlogs = this.props.blogs.map(blog => (
+            
             <div className="blogs-card" key={blog.id}>
-            {/*the front of flippy */}
-            <h2>{blog.title}</h2>
 
-            {<img className="blog-image" src={blog.img_url} alt='blog post'/>}
-            {/*the back of flippy */}
+            <Flippy
+            flipOnHover={false} // default false
+            flipOnClick={true} // default false
+            flipDirection="horizontal" // horizontal or vertical
+            ref={(r) => this.flippy = r}>
+            
+            <FrontSide>
+            <h3>{blog.title}</h3>
+            <img className="blog-image" src={blog.img_url} alt='blog post'/>
+            </FrontSide>
+            
+            <BackSide>
             <p>{blog.description}</p>
             <a href="null">Read More</a>
+            </BackSide>
+            </Flippy>
+            
             </div>
         ))
         return(
