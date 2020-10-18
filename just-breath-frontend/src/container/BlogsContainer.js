@@ -34,7 +34,7 @@ class BlogsContainer extends React.Component{
             
             <FrontSide>
             <h3>{blog.title}</h3>
-            <img className="blog-image" src={blog.img_url} alt='blog post'/>
+            <img className="blog-image" src={blog.img_url} alt={blog.name}/>
             </FrontSide>
             
             <BackSide>

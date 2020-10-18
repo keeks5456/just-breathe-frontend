@@ -207,7 +207,7 @@ img {
   padding: 20px;
   margin: 10px;
   border: 5px solid salmon;
-  border-radius:10px ;
+
 }
 
 .card:hover {
@@ -233,6 +233,8 @@ img {
   padding: 20px;
   margin: 10px;
   border: 5px solid salmon;
+  border-radius: 10px;
+
 }
 
 .blogs-card:hover {
