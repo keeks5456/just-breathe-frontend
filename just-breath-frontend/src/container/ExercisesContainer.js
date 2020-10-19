@@ -23,7 +23,7 @@ class ExercisesContainer extends React.Component {
           <ReactPlayer
             className="react-player"
             url={exercise.img_url}
-            width="700px"
+            width="730px"
             height="500px"
           />
         }
