@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import { authReducer } from '../reducers/index'
-// import { usersReducer } from '../reducers/users_reducer.js';
 import {createNewEntry} from '../actions/user_actions'
 
 class UserProfile extends React.Component{
@@ -30,7 +29,6 @@ class UserProfile extends React.Component{
     render(){
         const {user} = this.props
         const {content} = this.state
-        console.log(this.props.authReducer)
     
         return(
             <div className="profile-container">

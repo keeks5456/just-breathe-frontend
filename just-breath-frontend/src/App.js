@@ -1,20 +1,23 @@
 import React from 'react';
-import SignUp from "./component/SignUp";
-import Login from "./component/Login";
 import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
+//containers
 import Welcome from "./container/Welcome";
 import BlogsContainer from "./container/BlogsContainer";
 import ExercisesContainer from "./container/ExercisesContainer";
-import UserFavoritesContainer from "./container/UserFavoritesContainer";
+import UserFavorites from "./container/FavoriteContainer";
+import UserProfile from "./container/UserProfile";
+//components
+import SignUp from "./component/SignUp";
+import Login from "./component/Login";
 import NavigationBar from './component/Navbar'
 import Header from './component/Header'
 import NotFound from './component/NotFound'
-import UserProfile from "./container/UserProfile";
-
+import IntroJournal from './component/IntroJournal';
+//require auth
 import requireAuth from './require_auth/require_auth'
 import './App.css';
 import { connect } from 'react-redux'
-import IntroJournal from './component/IntroJournal';
+//actions
 import { setCurrentUser } from './actions';
 
 class App extends React.Component {
@@ -33,7 +36,7 @@ class App extends React.Component {
             <Route exact path='/login' component={Login} />
             <Route exact path='/signup' component={SignUp} />
             <Route exact path="/exercises" component={ExercisesContainer} />
-            <Route exact path="/favorites" component={UserFavoritesContainer} />
+            <Route exact path="/favorites" component={UserFavorites} />
             </Switch>
           </div>
         </Router>)
@@ -46,7 +49,7 @@ const mapDispatchToProps = (dispatch) =>({
   dispatch(setCurrentUser(user))
 })
 
-//take this out later
+//take this out later or keep ??
 
 export default connect(null, mapDispatchToProps)(App);
 
