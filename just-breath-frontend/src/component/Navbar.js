@@ -1,7 +1,9 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
-import { logout } from '../actions/index.js';
+import React from "react";
+import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { logout } from "../actions/index.js";
+import PropTypes from "prop-types";
+import { authReducer } from '../reducers/index'
 
 class NavigationBar extends React.Component {
   logout(e) {
@@ -10,41 +12,63 @@ class NavigationBar extends React.Component {
   }
 
   render() {
+    // console.log(this.props.auth);
+    // const { authReducer } = this.props.auth
     const userLinks = (
       <ul className="nav navbar-nav navbar-right">
-        <li><Link to="/welcome">Welcome</Link></li>
-        <li><Link to="/profile">Profile</Link></li>
-        <li><Link to="/blogs">Blog</Link></li>
-        <li><Link to="/exercises">Exercise</Link></li>
-        <li><Link to="/favorites">Favorite</Link></li>
-        <li><a href="#" onClick={this.logout.bind(this)}>Logout</a></li>
+        <li>
+          <Link to="/welcome">Welcome</Link>
+        </li>
+        <li>
+          <Link to="/profile">Profile</Link>
+        </li>
+        <li>
+          <Link to="/blogs">Blog</Link>
+        </li>
+        <li>
+          <Link to="/exercises">Exercise</Link>
+        </li>
+        <li>
+          <Link to="/favorites">Favorite</Link>
+        </li>
+        <li>
+          <a href="#" onClick={this.logout.bind(this)}>
+            Logout
+          </a>
+        </li>
       </ul>
     );
     const guestLinks = (
-        <ul className="nav navbar-nav navbar-right">
-          <li><Link to="/signup">Sign up</Link></li>
-          <li><Link to="/login">Login</Link></li>
-
-        </ul>
+      <ul className="nav navbar-nav navbar-right">
+        <li>
+          <Link to="/signup">Sign up</Link>
+        </li>
+        <li>
+          <Link to="/login">Login</Link>
+        </li>
+      </ul>
     );
 
     return (
-        <nav className="navbar navbar-default">
-          <div className="container-fluid">
-            <div className="navbar-header">
-            </div>
-            <div className="collapse navbar-collapse">
-              {!!localStorage.jwtToken ? userLinks : guestLinks}
-            </div>
+      <nav className="navbar navbar-default">
+        <div className="container-fluid">
+          <div className="navbar-header"></div>
+          <div className="collapse navbar-collapse">
+            {!!localStorage.jwtToken ? userLinks : guestLinks}
           </div>
-        </nav>
+        </div>
+      </nav>
     );
   }
 }
 
+NavigationBar.propTypes = {
+  auth: PropTypes.func.isRequired,
+};
+
 function mapStateToProps(state) {
   return {
-    auth: state.isAuthenticated
+    auth: state.authReducer,
   };
 }
 

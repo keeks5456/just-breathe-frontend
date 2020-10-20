@@ -8,7 +8,7 @@ export const createNewEntry = (entryData, jwtToken) => dispatch => {
   fetch(`${BASE_URL}/journal_entries`,{
     method: `POST`,
     headers:{
-     'content-type':'application/json',
+     'Content-type':'application/json',
      'Authorization': `Bearer ${jwtToken}`
   },
   body: JSON.stringify(entryData)

@@ -7,7 +7,6 @@ const initialState = {
 export const blogsReducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_BLOG:
-      console.log("reducer");
       return {
         ...state,
         blogs: action.payload,

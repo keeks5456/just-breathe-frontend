@@ -5,7 +5,7 @@ import { combineReducers } from "redux";
 import { usersReducer } from './users_reducer'
 import { blogsReducer } from '../reducers/blogs_reducer.js';
 import { exercisesReducer } from './exercises_reducer.js'
-
+import { favoritesReducer } from './favorites_reducer.js';
 
 const DEFAULT_STATE = {
   isAuthenticated: false,
@@ -44,6 +44,7 @@ export default combineReducers({
   usersReducer,
   authReducer,
   blogsReducer,
-  exercisesReducer
+  exercisesReducer,
+  favoritesReducer
  });
 
