@@ -9,20 +9,17 @@ import Flippy, { FrontSide, BackSide } from "react-flippy";
 
 class BlogsContainer extends React.Component {
   state = {
-    // favorite: false,
+
     user: {},
   };
 
   componentWillMount() {
     this.props.fetchBlogs();
-    console.log("from willMount");
   }
 
   handleClick = (blog) => {
     const user_id = this.props.user.id
-   
     this.props.postBlogFavorites(blog.id, user_id, localStorage.jwtToken);
-    console.log(user_id, blog)
   };
 
 
