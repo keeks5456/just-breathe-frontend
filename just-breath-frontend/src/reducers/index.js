@@ -1,11 +1,10 @@
 
-import { SET_CURRENT_USER, FIND_CURRENT_USER } from '../actions/index.js';
-
+import { SET_CURRENT_USER, FIND_CURRENT_USER} from '../actions/index.js';
+import {ADD_BLOG_FAVORITES} from '../actions/favorite_blog_action';
 import { combineReducers } from "redux";
 import { usersReducer } from './users_reducer'
 import { blogsReducer } from '../reducers/blogs_reducer.js';
 import { exercisesReducer } from './exercises_reducer.js'
-import { favoritesReducer } from './favorites_reducer.js';
 
 const DEFAULT_STATE = {
   isAuthenticated: false,
@@ -17,6 +16,8 @@ const DEFAULT_STATE = {
     user_favorite_blogs: []
   }
 };
+
+export const favorite_blogs = DEFAULT_STATE.user.user_favorite_blogs || []
 
 export const authReducer = (state = DEFAULT_STATE, action) => {
   switch(action.type) {
@@ -30,6 +31,11 @@ export const authReducer = (state = DEFAULT_STATE, action) => {
         return{
           isAuthenticated: true,
           user: action.user
+        }
+        case ADD_BLOG_FAVORITES:
+        return {
+          ...state,
+          user: {...state.user, user_favorite_blogs:[...favorite_blogs, action.payload]}
         }
     default:
       return state;
@@ -45,6 +51,5 @@ export default combineReducers({
   authReducer,
   blogsReducer,
   exercisesReducer,
-  favoritesReducer
  });
 
