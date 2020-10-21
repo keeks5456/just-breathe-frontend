@@ -13,10 +13,10 @@ export const postBlogFavorites = (blog_id, user_id, jwtToken) => (
     body: JSON.stringify({blog_id, user_id}),
   })
     .then((res) => res.json())
-    .then((favorite) => { 
+    .then((blog) => { 
       dispatch({
         type: ADD_BLOG_FAVORITES,
-        payload: favorite,
+        payload: blog,
       })
     });
 }; //end

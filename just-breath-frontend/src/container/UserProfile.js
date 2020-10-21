@@ -62,7 +62,7 @@ class UserProfile extends React.Component{
 
             <div className="card-container">
             {user.journal_entries.map(entry =>
-                 <div className="card" key={entry.id}> 
+                 <div className="journal-card" key={entry.id}> 
                  {entry.content}
                 </div>
             )}

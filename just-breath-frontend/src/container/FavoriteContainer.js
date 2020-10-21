@@ -4,10 +4,25 @@ import { postBlogFavorites } from "../actions/favorite_blog_action";
 import { authReducer } from "../reducers/index";
 import { blogsReducer } from "../reducers/blogs_reducer";
 import Flippy, { FrontSide, BackSide } from "react-flippy";
+import ReactPlayer from "react-player";
 
 class UserFavorites extends React.Component {
   render() {
     console.log(this.props.favorite_blogs);
+    const favExercises = this.props.favorite_exercises.map((exercise) =>(
+      <div className="exercise-card-favorite" key={exercise.id}>
+      <h3>{exercise.title}</h3>
+      {
+        <ReactPlayer
+          className="react-player"
+          url={exercise.img_url}
+          width="650px"
+          height="500px"
+        />
+      }
+      <p>{exercise.description}</p>
+      </div>
+    ))
     const favBlogs = this.props.favorite_blogs.map((blog) => (
       <div className="blogs-card-favorite" key={blog.id}>
         <Flippy
@@ -26,8 +41,10 @@ class UserFavorites extends React.Component {
             <a href="null">Read More</a>
           </BackSide>
         </Flippy>
-      </div>
-    ));
+        {/*end of blogs div */}
+        </div>
+      )
+    );
     return (
         <div className="favorites-container">
         <h1 className="blogs-header">Favorite Blogs</h1>
@@ -35,10 +52,8 @@ class UserFavorites extends React.Component {
           {favBlogs}
         </div>
 
-        <div className="exercises-header">
-          <h1>Favorite Exercises</h1>
-          {/*call user blogs here and map them to get each one */}
-        </div>
+        <h1 className="exercises-header">Favorite Exercises</h1>
+          {favExercises}
       </div>
     );
   }
@@ -47,6 +62,7 @@ class UserFavorites extends React.Component {
 const mapStateToProps = (state) => {
   return {
     favorite_blogs: state.authReducer.user.blogs,
+    favorite_exercises: state.authReducer.user.exercises
   };
 };
 
