@@ -10,6 +10,7 @@ class Welcome extends React.Component {
           <h1 className="welcome-heading">
             <strong>Just Breath</strong>
           </h1>
+          <h4>enter welcoming text here</h4>
 
           <div className="center">
           <p className='breath'>Breath With Me</p>
