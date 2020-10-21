@@ -1,5 +1,5 @@
 /*  */
-.js-focus-visible{
+.js-focus-visible {
   background-color: wheat;
 }
 
@@ -9,7 +9,7 @@
   align-items: center;
   padding: 50px;
   background: wheat;
-  color:whitesmoke;
+  color: whitesmoke;
   font-size: 80px;
   font-weight: bold;
 }
@@ -17,7 +17,6 @@
 .col-md-4 {
   display: flex;
   justify-content: center;
-
 }
 /* login */
 .form {
@@ -42,14 +41,15 @@
   transition-property: box-shadow, transform;
 }
 
-.form:hover, .form:focus, .form:active {
+.form:hover,
+.form:focus,
+.form:active {
   box-shadow: 10px 10px 5px salmon;
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
-
 }
 
-.form-group{
+.form-group {
   line-height: 2.1;
   line-height: 3.1;
   font-size: 20px;
@@ -65,18 +65,18 @@ button {
   border: none;
   cursor: pointer;
   border-radius: 10px;
-  border-radius: ; 
- font-size: 20px;
- border-style: ridge;
- background-color: whitesmoke;
+  border-radius: ;
+  font-size: 20px;
+  border-style: ridge;
+  background-color: whitesmoke;
 }
 
 p {
-    font-size: 20px;
-    font-weight: 600;
+  font-size: 20px;
+  font-weight: 600;
 }
 
-h1{
+h1 {
   padding-left: 40%;
   padding-bottom: 10%;
   font-family: sans-serif;
@@ -105,17 +105,17 @@ h1{
   transition-property: box-shadow, transform;
 }
 
-.form-signup:hover, .form-signup:focus, .form-signup:active {
+.form-signup:hover,
+.form-signup:focus,
+.form-signup:active {
   box-shadow: 10px 10px 5px salmon;
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
-
 }
 /* nav bar */
 .container-fluid {
   background-color: whitesmoke;
   position: relative;
-
 
   overflow: hidden;
   border-radius: 10px;
@@ -131,7 +131,6 @@ h1{
 li {
   display: inline;
   padding: 8px;
-;
   float: left;
 }
 
@@ -142,7 +141,6 @@ ul {
   overflow: hidden;
   background-color: whitesmoke;
 }
-
 
 li a {
   display: block;
@@ -159,18 +157,19 @@ li a:hover {
 }
 
 .motivation {
-  padding-left: 33%;
+  padding-left: 37%;
   /* padding-bottom: 10%; */
   font-family: sans-serif;
   letter-spacing: 5px;
 }
 
 .welcome-heading {
-  padding-left: 30%;
+  padding-left: 35%;
   padding-bottom: 5%;
   font-family: sans-serif;
   letter-spacing: 5px;
 }
+
 
 .motive-shuffler {
   margin-bottom: 20px;
@@ -191,15 +190,13 @@ img {
   border: 7px solid salmon;
 }
 
-.bio-paragraph{
+.bio-paragraph {
   background-color: white;
   padding: 25px;
   border-radius: 15px;
   border: 4px solid salmon;
   width: 30%;
 }
-
-
 
 .container {
   padding: 2px 16px;
@@ -210,10 +207,10 @@ img {
   padding-bottom: 7px;
 }
 
-.journal-card{
+.journal-card {
   background-color: white;
   float: left;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   width: 25%;
   padding: 20px;
@@ -221,17 +218,16 @@ img {
   border: 5px solid salmon;
   border-radius: 10px;
   font-weight: 900;
-
 }
 
 .card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
 .blogs-card {
   background-color: white;
   float: left;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   width: 20%;
   padding: 20px;
@@ -241,32 +237,29 @@ img {
 }
 
 .blogs-card:hover {
-  box-shadow: 0 10px 6px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 10px 6px 10px rgba(0, 0, 0, 0.2);
 }
 
-.exercise-card{
+.exercise-card {
   background-color: white;
   float: left;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   width: 25%;
   padding: 20px;
   margin: 10px;
   border: 5px solid salmon;
   border-radius: 10px;
-
 }
 
-
 .exercise-card:hover {
-  box-shadow: 0 10px 6px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 10px 6px 10px rgba(0, 0, 0, 0.2);
 }
 .card-container {
   display: list-item;
-
 }
 
-.blog-image{
+.blog-image {
   width: 80%;
   border-radius: 70px;
   border: none;
@@ -274,37 +267,34 @@ img {
 
 .favorite-blogs {
   display: inline-block;
- 
 }
 
 .fa-heart {
   font-size: 24px;
   float: right;
-  
 }
 
 .fa-heart:before :active {
   content: "\f004";
-  color:red
+  color: red;
 }
 
-.fa-heart:hover{
-  color:red;
+.fa-heart:hover {
+  color: red;
 }
 
-.favorites{
+.favorites {
   float: right;
-  
 }
 
-.blogs-header{
+.blogs-header {
   padding-bottom: 0;
 }
 
-.blogs-card-favorite{
+.blogs-card-favorite {
   background-color: white;
   float: left;
-  box-shadow: 10px 10px 0 rgba(0,0,0,0.2);
+  box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   width: 35%;
   padding: 20px;
@@ -314,28 +304,60 @@ img {
 }
 
 .blogs-card-favorite:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
-.favorite-exercises{
+.favorite-exercises {
   float: left;
 }
-.exercises-header{
+.exercises-header {
   padding-bottom: 0;
 }
 
 .exercise-card-favorite:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
-.exercise-card-favorite{
+.exercise-card-favorite {
   background-color: white;
-    float: left;
-    box-shadow: 10px 10px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
+  float: left;
+  box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
 
-    padding: 20px;
-    margin: 10px;
-    border: 5px solid salmon;
-    border-radius: 10px;
+  padding: 20px;
+  margin: 10px;
+  border: 5px solid salmon;
+  border-radius: 10px;
+}
+
+.breath{
+  padding-top: 25%;
+}
+.center{
+ background-color: rgba(250, 128, 114, 0.501);
+ position: absolute;
+ /* top: 50%; */
+ left: 50%;
+ transform: translate(-50%,-50%);
+ width: 150px;
+ height:150px;
+ border-radius: 50%;
+ margin-top: 15%; 
+ margin-right: 10%;
+ /* background: some url
+  */
+  animation: animate 5s linear infinite;
+  box-shadow: 0 0 0 15px rgba(255,192,203,.5), 0 0 0 30px rgba(255,192,203,.5), 0 0 0 45px rgba(255,192,203,.5), 0 0 0 60px rgba(255,192,203,.5), 0 0 0 75px rgba(255,192,203,.5);
+}
+
+@keyframes animate{
+  0%{
+    box-shadow: 0 0 0 15px rgba(255,192,203,.5), 0 0 0 30px rgba(255,192,203,.5), 0 0 0 45px rgba(255,192,203,.5), 0 0 0 60px rgba(255,192,203,.5), 0 0 0 75px rgba(255,192,203,.5);
+  }
+  50%{
+    box-shadow: 0 0 0 25px rgba(255,192,203,.5), 0 0 0 50px rgba(255,192,203,.5), 0 0 0 75px rgba(255,192,203,.5), 0 0 0 100px rgba(255,192,203,.5), 0 0 0 125px rgba(255,192,203,.5);
+  }
+  100%{
+    box-shadow: 0 0 0 15px rgba(255,192,203,.5), 0 0 0 30px rgba(255,192,203,.5), 0 0 0 45px rgba(255,192,203,.5), 0 0 0 60px rgba(255,192,203,.5), 0 0 0 75px rgba(255,192,203,.5);
+  }
 }

@@ -28,7 +28,6 @@ class App extends React.Component {
           <div>
           <NavigationBar />
             <Switch>
-          
           { <Route exact path='/welcome' component={Welcome} />}
             <Route exact path="/blogs" component={BlogsContainer} />
           { <Route exact path='/profile' component={UserProfile} />}

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { logout } from '../actions/index.js';
 import {authReducer} from '../reducers/index';
-
+import {withRouter} from 'react-router';
 class NavigationBar extends React.Component {
 
   logout(e) {
@@ -14,8 +14,8 @@ class NavigationBar extends React.Component {
 
   render() {
     console.log(this.props.auth)
-    const { isAuthenticated } = this.props.auth
-
+    const  isAuthenticated  = this.props.auth
+    console.log(!!isAuthenticated)
     const userLinks = (
       <ul className="nav navbar-nav navbar-right">
         <li><Link to="/welcome">Welcome</Link></li>
@@ -40,7 +40,7 @@ class NavigationBar extends React.Component {
             <div className="navbar-header">
             </div>
             <div className="collapse navbar-collapse">
-              {!isAuthenticated ? userLinks :  guestLinks}
+              {!!isAuthenticated ? userLinks :  guestLinks}
             </div>
           </div>
         </nav>
@@ -58,4 +58,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps, { logout })(NavigationBar);
+export default connect(mapStateToProps, { logout })(withRouter(NavigationBar));
