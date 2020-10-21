@@ -8,8 +8,9 @@ class Welcome extends React.Component {
       <div className="welcome-page grid-column">
         <div className="welcome-container">
           <h1 className="welcome-heading">
-            <strong>Welcome To A Stress Free You</strong>
+            <strong>Just Breath</strong>
           </h1>
+          <h4>enter welcoming text here</h4>
 
           <div className="center">
           <p className='breath'>Breath With Me</p>

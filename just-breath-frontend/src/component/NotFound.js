@@ -2,9 +2,10 @@ import React from 'react'
 
 const NotFound = () =>{
     return(
-    <div>
-        <h3>404 Page Not Found</h3>
-        <p>We are sorry, but the page you are looking for does not exist.</p>
+    <div className='image-404'>
+    <div className='text-404'>
+    <p>404 PAGE NOT FOUND</p>
+    </div>
     </div>
     )}
 
