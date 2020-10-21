@@ -32,10 +32,12 @@ class App extends React.Component {
             <Route exact path="/blogs" component={BlogsContainer} />
           { <Route exact path='/profile' component={UserProfile} />}
             <Route exact path='/intro_journal' component={IntroJournal}/>
+            <Route exact path='/' component={Login} />
             <Route exact path='/login' component={Login} />
             <Route exact path='/signup' component={SignUp} />
             <Route exact path="/exercises" component={ExercisesContainer} />
             <Route exact path="/favorites" component={UserFavorites} />
+            <Route exact path="*" component={NotFound}/>
             </Switch>
           </div>
         </Router>)

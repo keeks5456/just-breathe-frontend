@@ -3,8 +3,7 @@ import React from 'react'
 const NotFound = () =>{
     return(
     <div>
-        <h3>404 Page Not Found</h3>
-        <p>We are sorry, but the page you are looking for does not exist.</p>
+    <img className='not-found' src='https://image.freepik.com/free-vector/404-error-web-template-with-funny-monster_23-2147788954.jpg' alt='404 Not Found Page'></img>
     </div>
     )}
 

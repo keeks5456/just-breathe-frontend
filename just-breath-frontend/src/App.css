@@ -1,6 +1,6 @@
 /*  */
 .js-focus-visible {
-  background-color: wheat;
+  background-color: rgba(96, 185, 246, 0.76);
 }
 
 .header {
@@ -360,4 +360,11 @@ img {
   100%{
     box-shadow: 0 0 0 15px rgba(255,192,203,.5), 0 0 0 30px rgba(255,192,203,.5), 0 0 0 45px rgba(255,192,203,.5), 0 0 0 60px rgba(255,192,203,.5), 0 0 0 75px rgba(255,192,203,.5);
   }
+}
+
+.not-found{
+  margin-left: 35%;
+  /* width: 50%; */
+  opacity: 0.5;
+  border: 1px solid grey;
 }
