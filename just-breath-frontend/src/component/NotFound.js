@@ -2,8 +2,10 @@ import React from 'react'
 
 const NotFound = () =>{
     return(
-    <div>
-    <img className='not-found' src='https://image.freepik.com/free-vector/404-error-web-template-with-funny-monster_23-2147788954.jpg' alt='404 Not Found Page'></img>
+    <div className='image-404'>
+    <div className='text-404'>
+    <p>404 PAGE NOT FOUND</p>
+    </div>
     </div>
     )}
 
