@@ -181,8 +181,9 @@ li a:hover {
   margin-left: 45%;
 }
 
-.avatar-container {
-  padding-left: 80%;
+label {
+  font-size: larger;
+  font-weight: 700;
 }
 
 img {
@@ -195,24 +196,10 @@ img {
   padding: 25px;
   border-radius: 15px;
   border: 4px solid salmon;
+  width: 30%;
 }
 
 
-.card {
-  background-color: white;
-  float: left;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.3s;
-  width: 40%;
-  padding: 20px;
-  margin: 10px;
-  border: 5px solid salmon;
-
-}
-
-.card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-}
 
 .container {
   padding: 2px 16px;
@@ -223,13 +210,46 @@ img {
   padding-bottom: 7px;
 }
 
-.blogs-card {
- 
+.journal-card{
   background-color: white;
   float: left;
-  box-shadow: 10px 10px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
-  width: 40%;
+  width: 25%;
+  padding: 20px;
+  margin: 10px;
+  border: 5px solid salmon;
+  border-radius: 10px;
+  font-weight: 900;
+
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.blogs-card {
+  background-color: white;
+  float: left;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 20%;
+  padding: 20px;
+  margin: 10px;
+  border: 5px solid salmon;
+  border-radius: 10px;
+}
+
+.blogs-card:hover {
+  box-shadow: 0 10px 6px 10px rgba(0,0,0,0.2);
+}
+
+.exercise-card{
+  background-color: white;
+  float: left;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 25%;
   padding: 20px;
   margin: 10px;
   border: 5px solid salmon;
@@ -237,10 +257,10 @@ img {
 
 }
 
-.blogs-card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-}
 
+.exercise-card:hover {
+  box-shadow: 0 10px 6px 10px rgba(0,0,0,0.2);
+}
 .card-container {
   display: list-item;
 
@@ -259,8 +279,23 @@ img {
 
 .fa-heart {
   font-size: 24px;
+  float: right;
+  
 }
 
+.fa-heart:before :active {
+  content: "\f004";
+  color:red
+}
+
+.fa-heart:hover{
+  color:red;
+}
+
+.favorites{
+  float: right;
+  
+}
 
 .blogs-header{
   padding-bottom: 0;
@@ -271,7 +306,7 @@ img {
   float: left;
   box-shadow: 10px 10px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
-  width: 25%;
+  width: 35%;
   padding: 20px;
   margin: 10px;
   border: 5px solid salmon;
@@ -287,4 +322,20 @@ img {
 }
 .exercises-header{
   padding-bottom: 0;
+}
+
+.exercise-card-favorite:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.exercise-card-favorite{
+  background-color: white;
+    float: left;
+    box-shadow: 10px 10px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+
+    padding: 20px;
+    margin: 10px;
+    border: 5px solid salmon;
+    border-radius: 10px;
 }

@@ -3,32 +3,25 @@ import { connect } from "react-redux";
 import { fetchBlogs } from "../actions/user_blog_action";
 import { postBlogFavorites } from "../actions/favorite_blog_action";
 import { authReducer } from "../reducers/index";
-import { blogsReducer } from '../reducers/blogs_reducer';
+import { blogsReducer } from "../reducers/blogs_reducer";
 
 import Flippy, { FrontSide, BackSide } from "react-flippy";
 
 class BlogsContainer extends React.Component {
   state = {
-    // favorite: false,
     user: {},
   };
 
   componentWillMount() {
     this.props.fetchBlogs();
-    console.log("from willMount");
   }
 
   handleClick = (blog) => {
-    const user_id = this.props.user.id
-   
+    const user_id = this.props.user.id;
     this.props.postBlogFavorites(blog.id, user_id, localStorage.jwtToken);
-    console.log(user_id, blog)
   };
 
-
-
   render() {
-
     const renderBlogs = this.props.blogs.map((blog) => (
       <div className="blogs-card" key={blog.id}>
         <Flippy
@@ -38,13 +31,6 @@ class BlogsContainer extends React.Component {
           ref={(r) => (this.flippy = r)}
         >
           <FrontSide>
-            <button
-              onClick={() => this.handleClick(blog)}
-              className="favorites"
-            >
-              {" "}
-              <i className="fa fa-heart"></i>
-            </button>
             <h3>{blog.title}</h3>
             <img className="blog-image" src={blog.img_url} alt={blog.name} />
           </FrontSide>
@@ -54,13 +40,13 @@ class BlogsContainer extends React.Component {
             <a href="null">Read More</a>
           </BackSide>
         </Flippy>
+        <button onClick={() => this.handleClick(blog)} className="favorites">
+          {" "}
+          <i className="fa fa-heart"></i>
+        </button>
       </div>
     ));
-    return (
-        <div className="card-container">
-        {renderBlogs}
-        </div>
-        )
+    return <div className="card-container">{renderBlogs}</div>;
   }
 }
 
@@ -71,4 +57,6 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { fetchBlogs, postBlogFavorites })(BlogsContainer);
+export default connect(mapStateToProps, { fetchBlogs, postBlogFavorites })(
+  BlogsContainer
+);
