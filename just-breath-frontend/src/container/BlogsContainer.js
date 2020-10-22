@@ -34,7 +34,6 @@ class BlogsContainer extends React.Component {
       pauseOnHover: true,
       transition: Zoom,
     });
-
   };
 
   render() {
