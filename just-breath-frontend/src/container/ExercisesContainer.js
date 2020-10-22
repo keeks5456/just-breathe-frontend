@@ -5,6 +5,8 @@ import { postExerciseFavorites } from "../actions/favorite_exercise_action";
 import { exercisesReducer } from "../reducers/exercises_reducer";
 import { authReducer } from "../reducers/index";
 import ReactPlayer from "react-player";
+import { AnimatePresence, motion } from "framer-motion";
+import {pageTransitions} from '../pageTransition';
 
 class ExercisesContainer extends React.Component {
   state = {
@@ -32,7 +34,12 @@ class ExercisesContainer extends React.Component {
   render() {
     console.log(this.props.exercises);
     const renderExercises = this.props.exercises.map((exercise) => (
-      <div className="exercise-card" key={exercise.id}>
+      <motion.div
+      initial="out"
+      animate="in"
+      exit="out"
+      variants={pageTransitions}
+       className="exercise-card" key={exercise.id}>
        
         <h3>{exercise.title}</h3>
         {
@@ -51,7 +58,7 @@ class ExercisesContainer extends React.Component {
           {" "}
           <i className="fa fa-heart"> like</i>
         </button>
-      </div>
+      </motion.div>
     ));
     return <div className="card-container">{renderExercises}</div>;
   }

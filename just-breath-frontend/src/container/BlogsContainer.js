@@ -4,8 +4,9 @@ import { fetchBlogs } from "../actions/user_blog_action";
 import { postBlogFavorites } from "../actions/favorite_blog_action";
 import { authReducer } from "../reducers/index";
 import { blogsReducer } from "../reducers/blogs_reducer";
-
 import Flippy, { FrontSide, BackSide } from "react-flippy";
+import { AnimatePresence, motion } from "framer-motion";
+import {pageTransitions} from '../pageTransition';
 
 class BlogsContainer extends React.Component {
   state = {
@@ -23,7 +24,12 @@ class BlogsContainer extends React.Component {
 
   render() {
     const renderBlogs = this.props.blogs.map((blog) => (
-      <div className="blogs-card" key={blog.id}>
+      <motion.div
+      initial="out"
+      animate="in"
+      exit="out"
+      variants={pageTransitions} 
+      className="blogs-card" key={blog.id}>
         <Flippy
           flipOnHover={false}
           flipOnClick={true}
@@ -44,7 +50,7 @@ class BlogsContainer extends React.Component {
           {" "}
           <i className="fa fa-heart"></i>
         </button>
-      </div>
+      </motion.div>
     ));
     return <div className="card-container">{renderBlogs}</div>;
   }

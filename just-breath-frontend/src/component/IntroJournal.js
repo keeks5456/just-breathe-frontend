@@ -4,6 +4,8 @@ import React from 'react';
 import {createNewEntry} from '../actions/user_actions'
 import { authReducer } from '../reducers/index'
 import { connect } from 'react-redux';
+import { AnimatePresence, motion } from "framer-motion";
+import {pageTransitions} from '../pageTransition';
 
 const BASE_URL = 'http://localhost:3000/api/v1'
 
@@ -37,7 +39,12 @@ class IntroJournal extends React.Component{
     render(){
         const {content} = this.state
         return(
-            <div>
+            <motion.div
+            initial="out"
+            animate="in"
+            exit="out"
+            variants={pageTransitions} 
+            >
                 <h1 className="intro-title">Entry Journal</h1>
                 <div className="intro-container">
                 <p>Before you begin your adventures into <b>Just Breath,</b> please take a few minutes to write down anything you wish to express!</p>
@@ -62,7 +69,7 @@ class IntroJournal extends React.Component{
                 <button className="submit-button">Submit</button>
                 </form>
                 {this.state.content}
-            </div>
+            </motion.div>
         )
     }
 }

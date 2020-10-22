@@ -19,6 +19,8 @@ import './App.css';
 import { connect } from 'react-redux'
 //actions
 import { setCurrentUser } from './actions';
+// page transitions
+import { AnimatePresence, motion } from "framer-motion";
 
 class App extends React.Component {
 
@@ -27,22 +29,33 @@ class App extends React.Component {
         <Router>
           <div>
           <NavigationBar />
-            <Switch>
-          { <Route exact path='/welcome' component={Welcome} />}
-            <Route exact path="/blogs" component={BlogsContainer} />
-          { <Route exact path='/profile' component={UserProfile} />}
-            <Route exact path='/intro_journal' component={IntroJournal}/>
-            <Route exact path='/' component={Login} />
-            <Route exact path='/login' component={Login} />
-            <Route exact path='/signup' component={SignUp} />
-            <Route exact path="/exercises" component={ExercisesContainer} />
-            <Route exact path="/favorites" component={UserFavorites} />
-            <Route exact path="*" component={NotFound}/>
-            </Switch>
+          <AnimatePresence>
+          <Switch>
+        { <Route exact path='/welcome' component={Welcome} />}
+          <Route exact path="/blogs" component={BlogsContainer} />
+        { <Route exact path='/profile' component={UserProfile} />}
+          <Route exact path='/intro_journal' component={IntroJournal}/>
+          <Route exact path='/' component={Login} />
+          <Route exact path='/login' component={Login} />
+          <Route exact path='/signup' component={SignUp} />
+          <Route exact path="/exercises" component={ExercisesContainer} />
+          <Route exact path="/favorites" component={UserFavorites} />
+          <Route exact path="*" component={NotFound}/>
+          </Switch>
+          </AnimatePresence>
           </div>
         </Router>)
   }
 
+}
+
+  const pageTransition = {
+  in:{
+    opacity: 1
+  },
+  out: {
+    opacity: 0
+  }
 }
 
 const mapDispatchToProps = (dispatch) =>({

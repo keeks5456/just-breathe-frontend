@@ -2,6 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux'
 import { authReducer } from '../reducers/index'
 import {createNewEntry} from '../actions/user_actions'
+import { AnimatePresence, motion } from "framer-motion";
+import {pageTransitions} from '../pageTransition';
 
 class UserProfile extends React.Component{
 
@@ -26,12 +28,23 @@ class UserProfile extends React.Component{
         e.target.reset()
     }
 
+  
+
     render(){
+
+     
+
         const {user} = this.props
         const {content} = this.state
     
         return(
-            <div className="profile-container">
+            <motion.div
+            initial="out"
+            animate="in"
+            exit="out"
+            variants={pageTransitions}
+
+            className="profile-container">
             <div className="avatar-container">
             <img src={user.avatar} alt={user.username}/>
             </div>
@@ -68,7 +81,7 @@ class UserProfile extends React.Component{
             )}
             </div>
             
-            </div>
+            </motion.div>
         )
     }
 }

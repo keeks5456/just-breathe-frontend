@@ -5,9 +5,13 @@ import { authReducer } from "../reducers/index";
 import { blogsReducer } from "../reducers/blogs_reducer";
 import Flippy, { FrontSide, BackSide } from "react-flippy";
 import ReactPlayer from "react-player";
+//transitions
+import { AnimatePresence, motion } from "framer-motion";
+import {pageTransitions} from '../pageTransition';
 
 class UserFavorites extends React.Component {
   render() {
+
     console.log(this.props.favorite_blogs);
     const favExercises = this.props.favorite_exercises.map((exercise) =>(
       <div className="exercise-card-favorite" key={exercise.id}>
@@ -46,7 +50,12 @@ class UserFavorites extends React.Component {
       )
     );
     return (
-        <div className="favorites-container">
+      <motion.div
+      initial="out"
+      animate="in"
+      exit="out"
+      variants={pageTransitions}
+         className="favorites-container">
         <h1 className="blogs-header">Favorite Blogs</h1>
         <div className="favorite-blogs">
           {favBlogs}
@@ -54,7 +63,7 @@ class UserFavorites extends React.Component {
 
         <h1 className="exercises-header">Favorite Exercises</h1>
           {favExercises}
-      </div>
+      </motion.div>
     );
   }
 }
