@@ -7,6 +7,9 @@ import { authReducer } from "../reducers/index";
 import ReactPlayer from "react-player";
 import { AnimatePresence, motion } from "framer-motion";
 import {pageTransitions} from '../pageTransition';
+//alert
+import { toast, Zoom } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 class ExercisesContainer extends React.Component {
   state = {
@@ -25,14 +28,24 @@ class ExercisesContainer extends React.Component {
       user_id,
       localStorage.jwtToken
     );
+ 
   };
 
-  toggleLikes = () =>{
-
+  alert = () => {
+    toast.dark("Whoot! Added To Favorites!", {
+      position: toast.POSITION.TOP_LEFT,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      transition: Zoom,
+    });
   }
+
+
 
   render() {
     console.log(this.props.exercises);
+   
     const renderExercises = this.props.exercises.map((exercise) => (
       <motion.div
       initial="out"
@@ -52,7 +65,10 @@ class ExercisesContainer extends React.Component {
         }
         <p>{exercise.description}</p>
          <button
-          onClick={() => this.handleClick(exercise)}
+          onClick={() => {
+            this.alert();
+            this.handleClick(exercise)
+          }}
           className="favorites"
         >
           {" "}
