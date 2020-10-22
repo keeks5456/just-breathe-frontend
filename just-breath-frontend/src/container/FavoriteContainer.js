@@ -20,8 +20,8 @@ class UserFavorites extends React.Component {
         <ReactPlayer
           className="react-player"
           url={exercise.img_url}
-          width="650px"
-          height="500px"
+          width="100%"
+          height="100%"
         />
       }
       <p>{exercise.description}</p>

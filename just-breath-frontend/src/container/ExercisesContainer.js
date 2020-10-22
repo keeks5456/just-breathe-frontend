@@ -28,7 +28,6 @@ class ExercisesContainer extends React.Component {
       user_id,
       localStorage.jwtToken
     );
- 
   };
 
   alert = () => {
@@ -55,14 +54,16 @@ class ExercisesContainer extends React.Component {
        className="exercise-card" key={exercise.id}>
        
         <h3>{exercise.title}</h3>
+        <div className="exercise-video">
         {
           <ReactPlayer
             className="react-player"
             url={exercise.img_url}
-            width="600px"
-            height="500px"
+            width="100%"
+            height="100%"
           />
         }
+        </div>
         <p>{exercise.description}</p>
          <button
           onClick={() => {
