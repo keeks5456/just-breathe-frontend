@@ -22,6 +22,7 @@ import { setCurrentUser } from './actions';
 // page transitions
 import { AnimatePresence, motion } from "framer-motion";
 
+
 class App extends React.Component {
 
   render() {
@@ -49,14 +50,7 @@ class App extends React.Component {
 
 }
 
-  const pageTransition = {
-  in:{
-    opacity: 1
-  },
-  out: {
-    opacity: 0
-  }
-}
+
 
 const mapDispatchToProps = (dispatch) =>({
   setCurrentUser: user =>
