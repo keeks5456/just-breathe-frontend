@@ -8,6 +8,7 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "axios": "^0.20.0",
+    "framer-motion": "^2.9.4",
     "jwt-decode": "^3.0.0",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
@@ -16,7 +17,7 @@
     "react-player": "^2.6.2",
     "react-redux": "^7.2.1",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.3",
+    "react-scripts": "^3.4.4",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0"
   },

@@ -1,11 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { AnimatePresence, motion } from "framer-motion";
+import {pageTransitions} from '../pageTransition';
+
 // import userReducer from "../reducers/index.js"
 // import loadUser from "../actions/index.js"
 class Welcome extends React.Component {
+
+  
   render() {
+    
     return (
-      <div className="welcome-page grid-column">
+      <motion.div
+      initial="out"
+      animate="in"
+      exit="out"
+      variants={pageTransitions}
+       className="welcome-page grid-column">
         <div className="welcome-container">
           <h1 className="welcome-heading">
             <strong>Just Breath</strong>
@@ -28,7 +39,7 @@ class Welcome extends React.Component {
             <button className="motive-shuffler">Shuffle Me!</button>
           </div>
         */}
-      </div>
+      </motion.div>
     );
   }
 }
