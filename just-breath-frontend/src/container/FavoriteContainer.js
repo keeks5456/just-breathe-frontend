@@ -59,7 +59,7 @@ class UserFavorites extends React.Component {
         <div className="favorite-blogs">{favBlogs}</div>
 
         <h1 className="exercises-header">Favorite Exercises</h1>
-        {favExercises}
+        <div className="favorite-exercises">{favExercises}</div>
       </motion.div>
     );
   }
