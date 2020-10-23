@@ -11,36 +11,38 @@ class Welcome extends React.Component {
   render() {
     
     return (
+      <div className="welcome-container">
       <motion.div
       initial="out"
       animate="in"
       exit="out"
       variants={pageTransitions}
        className="welcome-page grid-column">
-        <div className="welcome-container">
           <h1 className="welcome-heading">
             <strong>Just Breath</strong>
-          </h1>
-          <h4>enter welcoming text here</h4>
+            </h1>
+            <Link to="/intro_journal">
+              <button className="intro_journal_button"> Entry Journal </button>
+            </Link>
+          <h4 className="temporary-quote">
+          “Happiness can be found even in the darkest of times, if one only remembers to turn on the light.” — Albus Dumbledore 
+          </h4>
 
           <div className="center">
           <p className='breath'>Breath With Me</p>
           </div>
 
 
-          <Link to="/intro_journal">
-            <button className="intro_journal_button"> Entry Journal </button>
-          </Link>
-        </div>
-
-        {/*
-          <div className="motivation-container">
+          
+          {/*
+            <div className="motivation-container">
             <h1 className="motivation">Motivational Quote Here</h1>
             <button className="motive-shuffler">Shuffle Me!</button>
+            </div>
+          */}
+          </motion.div>
           </div>
-        */}
-      </motion.div>
-    );
+          );
   }
 }
 

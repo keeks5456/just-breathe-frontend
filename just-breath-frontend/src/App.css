@@ -69,18 +69,17 @@ body::-webkit-scrollbar-thumb {
 }
 
 button {
-  padding: 6px 10px;
+  padding: 6px 15px 6px 15px;
   margin-top: 1px;
   margin-right: 16px;
   background: #ddd;
   font-size: 17px;
-  border: none;
   cursor: pointer;
-  border-radius: 10px;
-  border-radius: ;
   font-size: 20px;
-  border-style: ridge;
   background-color: whitesmoke;
+  color: black;
+  border: 2px solid #008cba;
+  border-radius: 15px;
 }
 
 p {
@@ -180,16 +179,32 @@ li a:hover {
 
 /* welcome page */
 .welcome-heading {
-  padding-left: 35%;
-  padding-bottom: 5%;
-
+  padding-bottom: 0%;
   letter-spacing: 5px;
   font-family: cursive;
   font-size: 650%;
   font-weight: bolder;
 }
+.temporary-quote {
+  font-size: 200%;
+  font-family: cursive;
+  width: 35%;
+  margin-left: 30%;
+  padding: 1%;
+}
 
+.intro-title{
+  padding-bottom: 4%;
+  padding-left: 40%;
+  font-family: cursive;
+  letter-spacing: 5px;
+}
 .intro_journal_button {
+  background-color: white;
+  color: black;
+  border: 2px solid #008cba;
+  padding: 10px;
+  border-radius: 15px;
   margin-left: 45%;
 }
 /* profile page */
@@ -254,7 +269,6 @@ img {
   display: inline-grid;
   margin: 1rem 2rem;
   color: #1a436b;
-
 }
 
 .blogs-card p {
@@ -280,6 +294,21 @@ img {
 p {
   font-size: inherit;
 }
+
+.p-intro{
+  margin-left: 15%;
+  font-size: 2em;
+  font-family: cursive;
+ 
+}
+
+.textarea-form{
+  margin-left: 40%;
+  font-size: 2em;
+  font-family: cursive;
+}
+
+
 
 /* exercises component */
 .exercise-card {
@@ -346,10 +375,8 @@ p {
   height: max-content;
   display: inline-grid;
   margin: 1rem 2rem;
-  color: #1a436b
+  color: #1a436b;
 }
-
-
 
 .blogs-card-favorite:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
@@ -384,27 +411,24 @@ p {
   height: max-content;
   display: inline-grid;
   margin: 1rem 2rem;
-  color: #1a436b
+  color: #1a436b;
 }
 
 /* breathing animation */
 .breath {
-  padding-top: 25%;
+  padding-top: 35%;
+  padding-left: 15px;
 }
 .center {
-  background-color: darkcyan;
-  position: absolute;
-  /* top: 50%; */
-  left: 50%;
+  background-color: #008bbace;
+  left: 65%;
   transform: translate(-50%, -50%);
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  margin-top: 15%;
-  margin-right: 10%;
-  /* background: some url
-  */
-  animation: animate 5s linear infinite;
+  margin-top: 7%;
+  margin-left: 50%;
+  animation: animate 6s linear infinite;
   box-shadow: 0 0 0 15px rgba(39, 249, 198, 0.3),
     0 0 0 30px rgba(39, 249, 198, 0.3), 0 0 0 45px rgba(39, 249, 198, 0.3),
     0 0 0 60px rgba(39, 249, 198, 0.3), 0 0 0 75px rgba(39, 249, 198, 0.3);
@@ -451,91 +475,45 @@ p {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-@media screen 
-  and (min-device-width: 1200px) 
-  and (max-device-width: 1600px) 
-  and (-webkit-min-device-pixel-ratio: 2)
-  and (min-resolution: 192dpi) { 
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
 }
 
 /* Portrait and Landscape */
-@media only screen 
-  and (min-device-width: 375px) 
-  and (max-device-width: 667px) 
-  and (-webkit-min-device-pixel-ratio: 2) { 
-
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
 }
 
 /* Portrait */
-@media only screen 
-  and (min-device-width: 375px) 
-  and (max-device-width: 667px) 
-  and (-webkit-min-device-pixel-ratio: 2)
-  and (orientation: portrait) { 
-
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
 }
 
 /* Landscape */
-@media only screen 
-  and (min-device-width: 375px) 
-  and (max-device-width: 667px) 
-  and (-webkit-min-device-pixel-ratio: 2)
-  and (orientation: landscape) { 
-
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
 }
 
 /* ----------- iPhone 6+, 7+ and 8+ ----------- */
 
 /* Portrait and Landscape */
-@media only screen 
-  and (min-device-width: 414px) 
-  and (max-device-width: 736px) 
-  and (-webkit-min-device-pixel-ratio: 3) { 
-
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) {
 }
 
 /* Portrait */
-@media only screen 
-  and (min-device-width: 414px) 
-  and (max-device-width: 736px) 
-  and (-webkit-min-device-pixel-ratio: 3)
-  and (orientation: portrait) { 
-
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait) {
 }
 
 /* Landscape */
-@media only screen 
-  and (min-device-width: 414px) 
-  and (max-device-width: 736px) 
-  and (-webkit-min-device-pixel-ratio: 3)
-  and (orientation: landscape) { 
-
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {
 }
 
 /* ----------- iPhone X ----------- */
 
 /* Portrait and Landscape */
-@media only screen 
-  and (min-device-width: 375px) 
-  and (max-device-width: 812px) 
-  and (-webkit-min-device-pixel-ratio: 3) { 
-
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) {
 }
 
 /* Portrait */
-@media only screen 
-  and (min-device-width: 375px) 
-  and (max-device-width: 812px) 
-  and (-webkit-min-device-pixel-ratio: 3)
-  and (orientation: portrait) { 
-
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait) {
 }
 
 /* Landscape */
-@media only screen 
-  and (min-device-width: 375px) 
-  and (max-device-width: 812px) 
-  and (-webkit-min-device-pixel-ratio: 3)
-  and (orientation: landscape) { 
-
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {
 }

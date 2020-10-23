@@ -20,9 +20,9 @@ class NavigationBar extends React.Component {
       <ul className="nav navbar-nav navbar-right">
         <li><Link to="/welcome">Welcome</Link></li>
         <li><Link to="/profile">Profile</Link></li>
-        <li><Link to="/blogs">Blog</Link></li>
-        <li><Link to="/exercises">Exercise</Link></li>
-        <li><Link to="/favorites">Favorite</Link></li>
+        <li><Link to="/blogs">Blogs</Link></li>
+        <li><Link to="/exercises">Exercises</Link></li>
+        <li><Link to="/favorites">Favorites</Link></li>
         <li><a href="#" onClick={this.logout.bind(this)}>Logout</a></li>
       </ul>
     );
