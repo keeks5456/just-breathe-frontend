@@ -34,7 +34,7 @@ class Signup extends Component {
     this.props.signup(this.state).then(
       (res) => {
         // route to /login once signup is complete
-        this.props.history.push("/welcome");
+        this.props.history.push("/login");
       },
       // if we get back a status code of >= 400 from the server...
       (err) => {

@@ -63,7 +63,7 @@ class LoginForm extends Component {
                 name="username"
                 value={username}
                 size="25"
-                maxLength="7"
+                maxLength="20"
                 onChange={this.onChange}
               />
             </div>

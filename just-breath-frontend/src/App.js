@@ -22,13 +22,16 @@ import { setCurrentUser } from "./actions";
 // page transitions
 import { AnimatePresence, motion } from "framer-motion";
 
+
+
 class App extends React.Component {
   render() {
+    
     return (
       <Router>
         <div>
           <NavigationBar />
-          <AnimatePresence>
+          <AnimatePresence exitBeforeEnter>
             <Switch>
               {<Route exact path="/welcome" component={Welcome} />}
               <Route exact path="/blogs" component={BlogsContainer} />
