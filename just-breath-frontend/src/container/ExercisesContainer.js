@@ -72,7 +72,7 @@ class ExercisesContainer extends React.Component {
           className="favorites"
         >
           {" "}
-          <i className="fa fa-heart"> like</i>
+          <i className="fa fa-heart"></i>
         </button>
       </motion.div>
     ));
