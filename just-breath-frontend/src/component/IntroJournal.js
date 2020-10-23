@@ -45,17 +45,17 @@ class IntroJournal extends React.Component {
       >
         <h1 className="intro-title">Entry Journal</h1>
         <div className="intro-container">
-          <p>
+          <p className='p-intro'>
             Before you begin your adventures into <b>Just Breath,</b> please
             take a few minutes to write down anything you wish to express!
           </p>
 
-          <p>
+          <p className='p-intro'>
             This is a safe space to let out any negative thoughts, emotions,
             frustrations, and all of the above that have hindered you to feel at
             peace with yourself!{" "}
           </p>
-        </div>
+        
         <form className="textarea-form" onSubmit={this.handleSubmit}>
           <label htmlFor="content">What's On Your Mind Today!</label>
           <br />
@@ -73,7 +73,7 @@ class IntroJournal extends React.Component {
           <br />
           <button className="submit-button">Submit</button>
         </form>
-        {this.state.content}
+        </div>
       </motion.div>
     );
   }

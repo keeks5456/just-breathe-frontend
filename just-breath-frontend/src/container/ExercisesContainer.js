@@ -6,14 +6,14 @@ import { exercisesReducer } from "../reducers/exercises_reducer";
 import { authReducer } from "../reducers/index";
 import ReactPlayer from "react-player";
 import { AnimatePresence, motion } from "framer-motion";
-import {pageTransitions} from '../pageTransition';
+import { pageTransitions } from "../pageTransition";
 //alert
 import { toast, Zoom } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 class ExercisesContainer extends React.Component {
   state = {
-    user: {}
+    user: {},
   };
 
   componentWillMount() {
@@ -28,7 +28,6 @@ class ExercisesContainer extends React.Component {
       user_id,
       localStorage.jwtToken
     );
- 
   };
 
   alert = () => {
@@ -39,40 +38,41 @@ class ExercisesContainer extends React.Component {
       pauseOnHover: true,
       transition: Zoom,
     });
-  }
-
-
+  };
 
   render() {
     console.log(this.props.exercises);
-   
+
     const renderExercises = this.props.exercises.map((exercise) => (
       <motion.div
-      initial="out"
-      animate="in"
-      exit="out"
-      variants={pageTransitions}
-       className="exercise-card" key={exercise.id}>
-       
+        initial="out"
+        animate="in"
+        exit="out"
+        variants={pageTransitions}
+        className="exercise-card"
+        key={exercise.id}
+      >
         <h3>{exercise.title}</h3>
-        {
-          <ReactPlayer
-            className="react-player"
-            url={exercise.img_url}
-            width="600px"
-            height="500px"
-          />
-        }
+        <div className="exercise-video">
+          {
+            <ReactPlayer
+              className="react-player"
+              url={exercise.img_url}
+              width="100%"
+              height="100%"
+            />
+          }
+        </div>
         <p>{exercise.description}</p>
-         <button
+        <button
           onClick={() => {
             this.alert();
-            this.handleClick(exercise)
+            this.handleClick(exercise);
           }}
           className="favorites"
         >
           {" "}
-          <i className="fa fa-heart"> like</i>
+          <i className="fa fa-heart"></i>
         </button>
       </motion.div>
     ));
