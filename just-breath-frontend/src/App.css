@@ -344,17 +344,27 @@ p {
 
 .fa-heart:before :active {
   content: "\f004";
-  color: red;
+  /* color: red; */
 }
 
-.fa-heart:hover {
+/* .fa-heart:hover {
   color: red;
-}
+} */
+
 /* favorite blogs */
 .favorites {
   float: right;
   width: 55px;
 }
+
+.liked {
+  color:red
+}
+
+.unliked {
+  color: black
+}
+
 /* favorite blogs */
 .blogs-header {
   padding-bottom: 0;

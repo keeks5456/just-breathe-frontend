@@ -15,15 +15,27 @@ toast.configure();
 class BlogsContainer extends React.Component {
   state = {
     user: {},
+    likes: true
   };
 
   componentWillMount() {
     this.props.fetchBlogs();
   }
 
+  toggleLikes = () =>{
+    console.log('jello')
+    console.log(this.state.likes)
+    this.setState({
+      ...this.state,
+      likes: !this.state.likes
+    })
+    console.log(this.state.likes)
+  }
+
   handleClick = (blog) => {
     const user_id = this.props.user.id;
     this.props.postBlogFavorites(blog.id, user_id, localStorage.jwtToken);
+    this.toggleLikes()
   };
 
   alert = () => {
@@ -35,6 +47,8 @@ class BlogsContainer extends React.Component {
       transition: Zoom,
     });
   };
+
+  
 
   render() {
     const renderBlogs = this.props.blogs.map((blog) => (
@@ -62,21 +76,30 @@ class BlogsContainer extends React.Component {
             <a href="null">Read More</a>
           </BackSide>
         </Flippy>
-        <button
+        <button      
+        className="favorites"
           onClick={() => {
             this.alert();
             this.handleClick(blog);
           }}
-          className="favorites"
         >
           {" "}
-          <i className="fa fa-heart"></i>
+          {/*<i className={this.state.likes ? "fa fa-heart liked" : "fa fa-heart unliked"}> </i>*/}
+          
+          <i className="fa fa-heart" />
         </button>
+        
       </motion.div>
+      
     ));
+    
     return <div className="card-container">{renderBlogs}</div>;
   }
 }
+
+// move this to blogs card 
+// make this instead a regular container
+
 
 const mapStateToProps = (state) => {
   return {

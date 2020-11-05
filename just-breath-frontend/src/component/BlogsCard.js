@@ -9,3 +9,6 @@ class BlogsCard extends React.Component{
 }
 // stretch gal feature maybe??
 export default BlogsCard
+
+// move blogs Container here and render just one card 
+// add th
