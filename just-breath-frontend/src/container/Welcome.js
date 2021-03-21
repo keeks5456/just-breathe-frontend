@@ -16,7 +16,7 @@ class Welcome extends React.Component {
       initial="out"
       animate="in"
       exit="out"
-      variants={pageTransitions}
+      variants={pageTransitions}>
        className="welcome-page grid-column">
           <h1 className="welcome-heading">
             <strong>Just Breath</strong>
