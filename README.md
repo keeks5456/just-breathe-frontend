@@ -1,3 +1,4 @@
+
 # Just Breathe - Frontend
 
 ## Introduction 
@@ -16,5 +17,4 @@ bundle install
 yarn start <-- to start that server
 ```
 You will want to hi 'y' for 'yes' when the terminal asks if you'd like the run the server on a new port, (which will be http://localhost:3001)
-
 
