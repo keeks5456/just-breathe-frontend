@@ -88,10 +88,9 @@ class LoginForm extends Component {
 	}
 }
 
-// let's add some propTypes for additional validation and readability
+
 LoginForm.propTypes = {
 	login: PropTypes.func.isRequired
 };
 
-// we do not want any state mapped to props, so let's make that first parameter to connect `null`
 export default withRouter(connect(null, { login })(LoginForm)); 
