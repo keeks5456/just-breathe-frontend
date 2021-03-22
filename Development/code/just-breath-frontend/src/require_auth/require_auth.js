@@ -1,32 +1,32 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { withRouter } from "react-router-dom";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
-export default function (ComponentToBeRendered) {
-  class Authenticate extends Component {
-    componentWillMount() {
-      if (!this.props.isAuthenticated) {
-        this.props.history.push("/login");
-      }
-    }
+export default function(ComponentToBeRendered) {
+	class Authenticate extends Component {
+		componentWillMount() {
+			if (!this.props.isAuthenticated) {
+				this.props.history.push('/login');
+			}
+		}
 
-    componentWillUpdate(nextProps) {
-      // debugger
-      if (!nextProps.isAuthenticated) {
-        this.props.history.push("/login");
-      }
-    }
+		componentWillUpdate(nextProps) {
+			// debugger
+			if (!nextProps.isAuthenticated) {
+				this.props.history.push('/login');
+			}
+		}
 
-    render() {
-      return <ComponentToBeRendered {...this.props} />;
-    }
-  }
+		render() {
+			return <ComponentToBeRendered {...this.props} />;
+		}
+	}
 
-  function mapStateToProps(state) {
-    return {
-      isAuthenticated: state.isAuthenticated,
-    };
-  }
+	function mapStateToProps(state) {
+		return {
+			isAuthenticated: state.isAuthenticated
+		};
+	}
 
-  return withRouter(connect(mapStateToProps)(Authenticate));
+	return withRouter(connect(mapStateToProps)(Authenticate));
 }
