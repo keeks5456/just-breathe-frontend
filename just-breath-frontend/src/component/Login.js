@@ -92,4 +92,6 @@ LoginForm.propTypes = {
 	login: PropTypes.func.isRequired
 };
 
-export default withRouter(connect(null, { login })(LoginForm));
+
+export default withRouter(connect(null, { login })(LoginForm)); 
+

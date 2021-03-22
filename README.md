@@ -8,13 +8,26 @@ Just breathe is a web application provided to a user reduce their anxiety as a s
 - Clone this repository
 - Navigate into the directory where you cloned the repository.
 
+## Prerequisites
+What you'll need to install:
+```
+npx create-react-app my-app
+cd my-app
+npm start
+```
 ## Just-Breathe - Frontend
 While your backebd server is running, in a serperate terminal, we can now:
-Navigate into voluntheroes-client folder
+Navigate into just-breathe-backend folder
 In the terminal write:
 ```
 bundle install
 yarn start <-- to start that server
 ```
 You will want to hi 'y' for 'yes' when the terminal asks if you'd like the run the server on a new port, (which will be http://localhost:3001)
+
+## Built With 
+- React.js: The web framework used
+
+## Author
+Akiko Green 
 
