@@ -94,4 +94,4 @@ LoginForm.propTypes = {
 };
 
 // we do not want any state mapped to props, so let's make that first parameter to connect `null`
-export default withRouter(connect(null, { login })(LoginForm));
+export default withRouter(connect(null, { login })(LoginForm)); 
