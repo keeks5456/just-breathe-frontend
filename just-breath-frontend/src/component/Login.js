@@ -88,7 +88,6 @@ class LoginForm extends Component {
 	}
 }
 
-
 // let's add some propTypes for additional validation and readability
 LoginForm.propTypes = {
 	login: PropTypes.func.isRequired
