@@ -7,7 +7,6 @@ import { AnimatePresence, motion } from "framer-motion";
 import { pageTransitions } from "../pageTransition";
 
 class Signup extends Component {
-  // pretty standard
   constructor(props) {
     super(props);
     this.state = {
@@ -23,20 +22,15 @@ class Signup extends Component {
   }
 
   onChange(e) {
-    // change a key in state with whatever the name attribute is
-    // either username or password
     this.setState({ [e.target.name]: e.target.value });
   }
 
   onSubmit(e) {
     e.preventDefault();
-    // make sure we use an arrow function here to correctly bind this to this.props.history.push
     this.props.signup(this.state).then(
       (res) => {
-        // route to /login once signup is complete
         this.props.history.push("/login");
       },
-      // if we get back a status code of >= 400 from the server...
       (err) => {
         this.setState({
           errorMessage: (err.message = "Username or Password are Incorrect"),
@@ -124,7 +118,6 @@ class Signup extends Component {
   }
 }
 
-// let's start adding propTypes - it's a best practice
 Signup.propTypes = {
   signup: PropTypes.func.isRequired,
 };
