@@ -8,13 +8,6 @@ Just breathe is a web application provided to a user reduce their anxiety as a s
 - Clone this repository
 - Navigate into the directory where you cloned the repository.
 
-## Prerequisites
-What you'll need to install:
-```
-npx create-react-app my-app
-cd my-app
-npm start
-```
 ## Just-Breathe - Frontend
 While your backebd server is running, in a serperate terminal, we can now:
 Navigate into just-breathe-backend folder
